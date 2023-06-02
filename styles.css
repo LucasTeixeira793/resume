@@ -7,6 +7,10 @@
     --bs-body-font-size: 1.2rem;
 }
 
+body{
+    color: #303030;
+}
+
 a {
     word-break: break-word;
     text-decoration: none;
@@ -15,6 +19,23 @@ a {
 h1, h2, h3, h4, h5 {
     color: #000000;
 }
+
+.titulo {
+    color: #2c2c2c !important;
+    font-weight: 700 !important;
+    font-size: 1.5rem !important;
+}
+
+.titulo-sub {
+    color: #2c2c2c !important;
+    font-weight: 500 !important;
+    font-size: 1.25rem !important;
+}
+
+h5.fs-5, h3.fs-5 {
+    font-weight: bold;
+}
+
 .txt-black{
     color: #000000;
 }
@@ -43,8 +64,21 @@ h1, h2, h3, h4, h5 {
         text-align: justify;
     }
 
-    h1, h2, h3, h4, h5 {
+    h1, h2, h3, h4{
         font-size: 1.25rem;
+    }
+
+    h5.fs-5, h3.fs-5 {
+        font-weight: bold;
+        font-size: .75rem !important;
+    }
+    
+    .fs-4{
+        font-size: 1rem !important;
+    }
+
+    .list-print{
+        padding: 3px 0;
     }
 
     .page {
