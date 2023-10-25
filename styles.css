@@ -7,8 +7,14 @@
     --bs-body-font-size: 1.2rem;
 }
 
+html{
+    max-width: 100vw !important;
+}
+
 body{
     color: #303030;
+    overflow-x: hidden;
+    max-width: 100% !important;
 }
 
 a {
@@ -27,13 +33,27 @@ h1, h2, h3, h4, h5 {
 }
 
 .titulo-sub {
-    color: #2c2c2c !important;
     font-weight: 500 !important;
     font-size: 1.25rem !important;
 }
 
+.link{
+    color: #0051ff !important;
+    text-decoration: underline;
+    font-size: 1.25rem !important;
+}
+
+.link:hover{
+    color: #023fc3 !important;
+    text-decoration: none;
+}
+
 h5.fs-5, h3.fs-5 {
     font-weight: bold;
+}
+
+.txt-black{
+    color: #000000;
 }
 
 .txt-black{
@@ -45,6 +65,21 @@ h5.fs-5, h3.fs-5 {
 }
 .habilidade:hover{
     color: #000;
+}
+
+.projetos-screen-ttl{
+    font-size: 1.25rem;
+}
+
+.img-perfil-mobile{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-perfil-mobile img{
+    max-width: 150px !important;
 }
 
 @media print {
@@ -99,8 +134,11 @@ h5.fs-5, h3.fs-5 {
 
     .badge {
         border: 0.07rem solid #868e96;
+        color: #2c2c2c !important;
         color: inherit;
         background-color: inherit;
+        margin: none !important;
+        
     }
 
     .print-url {
@@ -111,6 +149,25 @@ h5.fs-5, h3.fs-5 {
 
     .text-print-right {
         text-align: right;
+    }
+
+    .expProf{
+        margin-bottom: 1px !important;
+    }
+    .link{
+        color: #000 !important;
+        text-decoration: none !important;
+        font-size: .75rem !important;
+    }
+
+    .link:hover{
+        color: #0051ff !important;
+        text-decoration: underline;
+        font-size: 1rem !important;
+    }
+
+    .educa{
+        margin-bottom: .5rem !important;
     }
 }
 
@@ -148,7 +205,9 @@ h5.fs-5, h3.fs-5 {
 .badge {
     font-weight: normal;
     letter-spacing: 0.05rem;
+    color: #2c2c2c !important;
 }
+
 
 @media print {
     .col-print-1 {
@@ -209,3 +268,5 @@ h5.fs-5, h3.fs-5 {
     content: '••••';
     color: var(--bs-primary);
 }
+
+
