@@ -5,7 +5,7 @@
     "build": "node src/build.js",
     "watch": "chokidar '**/*' -i 'dist/**/*' -c 'npm run build'",
     "prestart": "npm run build",
-    "start": "npm run watch & live-server dist",
+    "start": "live-server dist && npm run watch",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
