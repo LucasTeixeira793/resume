@@ -28,7 +28,7 @@ module.exports = {
       period: 'Jun/23 - Atualmente',
       skills: ['.NET', 'Inovação', 'PL/SQL', 'Comunicação', 'Angular', 'Jenkins', 'Git', 'CI/CD'],
       contents: 
-      "Desenvolvedor Full Stack, desempenhando um papel fundamental no desenvolvimento de novas funcionalidades e na resolução de problemas sistêmicos relacionados ao produto de Empréstimo Consignado. Minha experiência envolve a manipulação de APIs em .NET e a criação de procedures em PL/SQL, enquanto utilizo ferramentas como Jenkins ou Gitlab CI, dependendo das necessidades do projeto, para a implementação de integração contínua e entrega contínua. Além disso, meu foco constante na comunicação tem sido essencial para garantir a colaboração eficaz em equipe e a entrega de soluções de alta qualidade."
+      "Desenvolvedor Full Stack, desempenhando papel no desenvolvimento de novas funcionalidades e na resolução de problemas sistêmicos relacionados ao produto de Empréstimo Consignado. Minha experiência envolve a manipulação de APIs em .NET e a criação de procedures em PL/SQL, enquanto utilizo ferramentas como Jenkins ou Gitlab CI, dependendo das necessidades do projeto, para a implementação de integração contínua e entrega contínua. Além disso, meu foco constante na comunicação tem sido essencial para garantir a colaboração eficaz em equipe e a entrega de soluções de alta qualidade."
     },
     {
       title: 'Banco Safra SA - Estagiário de TI',
@@ -40,22 +40,27 @@ module.exports = {
   ],
   experience: [
     {
-      header: 'Kallistra: jan/23 - Atualmente',
+      header: 'TCC: jan/24 - Atualmente',
+      link: 'https://github.com/tcc-previsao-energia',
+      contents: 'O projeto visa desenvolver um sistema de previsão de preços de empresas de energia elétrica na bolsa de valores brasileira (B³), utilizando técnicas de machine learning com ênfase na arquitetura LSTM. A ideia está em integrar informações climáticas, econômicas e financeiras para melhorar a precisão das previsões e fornecer insights.'
+    },
+    {
+      header: 'Kallistra: jan/23 - dez/23',
       link: '',
-      contents: `Atualmente, atuando neste projeto, onde eu e minha equipe desenvolvemos geradores de dados simulando um dispositivo IoT. Os dados são enviados para a Azure, processados e armazenados na AWS. Próximos passos incluem a implementação de Machine Learning para reconhecimento de padrões de usuários.`
+      contents: 'Eu e minha equipe desenvolvemos geradores de dados simulando um dispositivo IoT. Os dados gerados são enviados para a Azure, processados e armazenados na AWS (Experiência me multi-cloud) Juntamente com a implementação de uma Machine Learning simples para reconhecimento de padrões de usuários.'
     },
     {
       header: 'Iara: jan/22 - dez/22',
       link: 'https://github.com/LucasTeixeira793/iara-backend',
-      contents: `Atuei como líder de projeto e fui responsável pelo desenvolvimento completo do Backend em Java SpringBoot. Além disso, realizei o provisionamento da aplicação na AWS e implementei o CI/CD utilizando Jenkins. O projeto consistia em uma plataforma de busca e contratação de profissionais de beleza próximos aos usuários.`
-    },
+      contents: 'Atuei como líder de projeto e fui responsável pelo desenvolvimento completo do Backend em Java SpringBoot. Além disso, realizei o provisionamento da aplicação na AWS e implementei o CI/CD utilizando Jenkins. O projeto consistia em uma plataforma de busca e contratação de profissionais de beleza próximos aos usuários.'
+    }
+  ],
+  experienceScreen: [
     {
       header: 'SafeLog: jul/21 - dez/21',
       link: 'https://github.com/nikolas-virionis/Safelog',
       contents: `Desenvolvi uma plataforma web utilizando Node.js para monitorar CPU, disco e RAM de servidores. Implementei um executável em Java para coletar os dados de monitoramento, que foram armazenados em um banco de dados SQL Server alocado na Azure.`
-    }
-  ],
-  experienceScreen: [
+    },
     {
       header: 'StrongBerry: jan/21 - jun/21',
       link: '',
