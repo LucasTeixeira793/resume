@@ -30,7 +30,7 @@
                         <time datetime="" class="small">Atualizado em: 26/04/2025</time>
                     </p>
                     <p>
-                        <span class="screen"><a href="CV-Lucas-Teixeira.pdf"><i class="far fa-file-pdf"></i>Download versão PDF</a></span>
+                        <span class="screen"><a href="CV-Lucas-Teixeira.pdf"><i class="far fa-file-pdf"></i>Baixar versão PDF</a></span>
                         <span class="print" style="text-align: left;">Versão completa e atualizada disponível em <a href="https://LucasTeixeira793.github.io/resume/pt-BR">https://LucasTeixeira793.github.io/resume/pt-BR</a></span>
                     </p>
                 </div>
@@ -92,9 +92,6 @@
             </div>
             <div class="col-print-2 col-6 col-sm-6 col-md-3 col-lg-2 text-right habilidade">
                 <small class="badge text-body border border-1">Cloud</small>
-            </div>
-            <div class="col-print-2 col-6 col-sm-6 col-md-3 col-lg-2 text-right habilidade">
-                <small class="badge text-body border border-1">Banco de Dados</small>
             </div>
             <div class="col-print-2 col-6 col-sm-6 col-md-3 col-lg-2 text-right habilidade">
                 <small class="badge text-body border border-1">Ágil</small>
@@ -327,26 +324,5 @@
     </div>
 </div>
 </body>
-
-<script>
-    function switchLang(lang) {
-      window.location.href = `${lang}/index.html`;
-    }
-
-    // Redirecionamento automático com base no navegador ou query param
-    (function autoRedirect() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const langParam = urlParams.get('lang');
-      const browserLang = navigator.language || 'pt-BR';
-      const supportedLangs = ['pt-BR', 'en'];
-
-      const lang = supportedLangs.includes(langParam) ? langParam :
-                   supportedLangs.includes(browserLang) ? browserLang : 'pt-BR';
-
-      if (!window.location.pathname.includes(`${lang}/index.html`)) {
-        window.location.href = `${lang}/index.html`;
-      }
-    })();
-  </script>
 </html>
 
