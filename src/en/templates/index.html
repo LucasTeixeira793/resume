@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <base target="_blank">
 </head>
@@ -18,7 +18,7 @@
     <div class="border-2 border-print-0 border-dark mb-3 pb-3 pb-print-0 mb-print-1">
         <div class="row">
             <div class="screen d-block d-sm-none img-perfil-mobile text-center">
-                <img src="me.jpg" class="screen rounded-circle img-fluid minha-foto" alt="Personal photo">
+                <img src="assets/me.jpg" class="screen rounded-circle img-fluid minha-foto" alt="Personal photo">
             </div>
             <div class="col-print-6 col-12 col-md-4 d-flex justify-content-between flex-column">
                 <div>
@@ -27,16 +27,16 @@
                 </div>
                 <div>
                     <p>
-                        <time datetime="{{ buildinfo.date }}" class="small">Atualizado em: {{ updated }}</time>
+                        <time datetime="{{ buildinfo.date }}" class="small">Updated on: {{ updated }}</time>
                     </p>
                     <p>
-                        <span class="screen"><a href="{{ pdfFileName }}"><i class="far fa-file-pdf"></i>Download versão PDF</a></span>
-                        <span class="print" style="text-align: left;">Versão completa e atualizada disponível em <a href="{{ baseUrl }}">{{ baseUrl }}</a></span>
+                        <span class="screen"><a href="{{ pdfFileName }}"><i class="far fa-file-pdf"></i>Download PDF version</a></span>
+                        <span class="print" style="text-align: left;">Full and updated version available at <a href="{{ baseUrl }}">{{ baseUrl }}</a></span>
                     </p>
                 </div>
             </div>
             <div class="screen col-4 col-md-3 col-lg-2 offset-lg-1 d-none d-md-block align-md-self-center text-center">
-                <img src="me.jpg" class="rounded-circle img-fluid minha-foto" alt="Personal photo">
+                <img src="assets/me.jpg" class="rounded-circle img-fluid minha-foto" alt="Personal photo">
             </div>
             <div class="col-print-6 col-12 col-md-5 offset-lg-1 col-lg-4">
                 <ul class="list-group list-group-flush">
@@ -52,11 +52,11 @@
     </div>
 
     <div class="border-bottom border-2 border-print-0 border-dark mb-5 pb-5 pb-print-0 mb-print-1 resumo">
-        Atualmente atuando como desenvolvedor Back-end da Financeira no Banco Safra SA. Sou apaixonado por tecnologia e desenvolvimento de software, estou sempre em busca de novos desafios que me permitam aprimorar minhas habilidades. Com uma sólida formação em inglês e uma base consistente em conhecimentos de programação, estou ansioso para explorar novas oportunidades no mercado de tecnologia e continuar crescendo profissionalmente.
+        Currently working as a Back-end Developer at Banco Safra SA. I am passionate about technology and software development, and I am always looking for new challenges that allow me to improve my skills. With a solid background in English and a solid foundation in programming knowledge, I am eager to explore new opportunities in the technology market and continue to grow professionally.
     </div>
 
     <div class="border-bottom screen border-2 border-print-0 border-dark mb-5 pb-5 pb-print-0 mb-print-1">
-        <h3 class="h2 mb-4">Habilidades</h3>
+        <h3 class="h2 mb-4">Skills</h3>
         <div class="row align-items-center">
             {{#each skills}}
             <div class="col-print-2 col-6 col-sm-6 col-md-3 col-lg-2 text-right habilidade">
@@ -68,7 +68,7 @@
 
 
     <div class="expProf border-bottom border-2 border-print-0 border-dark mb-5 pb-5 pb-print-0 mb-print-1">
-        <h2>Experiência Profissional</h2>
+        <h2>Professional Experience</h2>
         {{#each positions}}
         <div class="screen">
             <div class="row d-block d-md-flex">
@@ -108,7 +108,7 @@
     </div>
 
     <div class="border-bottom border-2 border-print-0 border-dark mb-5 pb-5 pb-print-0 mb-print-1">
-        <h2>Educação</h2>
+        <h2>Education</h2>
         {{#each education}}
         <div class="row d-block d-md-flex educa">
             <div class="screen col-md-2 pt-1">
@@ -139,7 +139,7 @@
         {{/each}}
     </div>
 
-    <h2>Projetos</h2>
+    <h2>Projects</h2>
     {{#each experience}}
     <div>
         <a href="{{ link }}" class="fs-5 fw-normal txt-black screen titulo-sub link">{{ header }}</a>

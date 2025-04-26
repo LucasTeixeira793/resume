@@ -10,17 +10,17 @@ module.exports = {
   },
   skills: [
     ['Inglês', 75],
+    ['.NET', 100],
+    ['RabbitMQ', 100],
+    ['SQL', 100],
+    ['NoSQL', 100],
     ['Estrutura de dados', 70],
     ['Cloud', 75],
-    ['Desenvolvimento Web', 100],
-    ['Programação', 100],
-    ['Banco de Dados', 100],
     ['Ágil', 100],
     ['DevOps', 100],
     ['CI/CD', 70],
     ['Python', 68],
-    ['Machine Learning', 68],
-    ['Muito mais...', 100]
+    ['Machine Learning', 68]
   ],
   positions: [
     {
@@ -75,7 +75,7 @@ module.exports = {
   education: [
     {
       title: 'São Paulo Tech School - SPTech',
-      skills: ['Java + SpringBoot','Auto-controle Socioemocional','Trabalho em equipe','REST','CI/CD','R','AWS/Azure','Analytics','Scrum','IOT'],
+      skills: ['Java + SpringBoot','Autocontrole Socioemocional','Trabalho em equipe','REST','CI/CD','R','AWS/Azure','Analytics','Scrum','IOT'],
       type: 'Bacharelado em Ciências da Computação.',
       period: '2021 - 2024',
       contents:[
