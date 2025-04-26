@@ -1,0 +1,272 @@
+:root {
+    --bs-font-sans-serif: Roboto, sans-serif;
+    --bs-body-font-weight: 400;
+    --bs-body-color: #858585;
+    --bs-body-color-rgb: 133, 133, 133;
+    --light-color: #D9D9D9;
+    --bs-body-font-size: 1.2rem;
+}
+
+html{
+    max-width: 100vw !important;
+}
+
+body{
+    color: #303030;
+    overflow-x: hidden;
+    max-width: 100% !important;
+}
+
+a {
+    word-break: break-word;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #000000;
+}
+
+.titulo {
+    color: #2c2c2c !important;
+    font-weight: 700 !important;
+    font-size: 1.5rem !important;
+}
+
+.titulo-sub {
+    font-weight: 500 !important;
+    font-size: 1.25rem !important;
+}
+
+.link{
+    color: #0051ff !important;
+    text-decoration: underline;
+    font-size: 1.25rem !important;
+}
+
+.link:hover{
+    color: #023fc3 !important;
+    text-decoration: none;
+}
+
+h5.fs-5, h3.fs-5 {
+    font-weight: bold;
+}
+
+.txt-black{
+    color: #000000;
+}
+
+.txt-black{
+    color: #000000;
+}
+
+.habilidade{
+    white-space: nowrap;
+}
+.habilidade:hover{
+    color: #000;
+}
+
+.projetos-screen-ttl{
+    font-size: 1.25rem;
+}
+
+.img-perfil-mobile{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-perfil-mobile img{
+    max-width: 150px !important;
+}
+
+@media print {
+    :root {
+        --bs-body-color: #000;
+    }
+
+    body {
+        font-size: 0.7rem;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    p, .resumo{
+        text-align: justify !important;
+    }
+
+    h1, h2, h3, h4{
+        font-size: 1.25rem;
+    }
+
+    h5.fs-5, h3.fs-5 {
+        font-weight: bold;
+        font-size: .75rem !important;
+    }
+    
+    .fs-4{
+        font-size: 1rem !important;
+    }
+
+    .list-print{
+        padding: 3px 0;
+    }
+
+    .page {
+        min-width: 100%;
+    }
+
+    .screen {
+        display: none;
+    }
+
+    .card {
+        border: none;
+    }
+
+    .card-body {
+        padding: 0;
+    }
+
+    .badge {
+        border: 0.07rem solid #868e96;
+        color: #2c2c2c !important;
+        color: inherit;
+        background-color: inherit;
+        margin: none !important;
+        
+    }
+
+    .print-url {
+        color: #deeef9;
+        text-decoration: none;
+        font-size: smaller;
+    }
+
+    .text-print-right {
+        text-align: right;
+    }
+
+    .expProf{
+        margin-bottom: 1px !important;
+    }
+    .link{
+        color: #000 !important;
+        text-decoration: none !important;
+        font-size: .75rem !important;
+    }
+
+    .link:hover{
+        color: #0051ff !important;
+        text-decoration: underline;
+        font-size: 1rem !important;
+    }
+
+    .educa{
+        margin-bottom: .5rem !important;
+    }
+}
+
+@media not print {
+    .page {
+        padding: 2rem;
+    }
+
+    .print {
+        display: none;
+    }
+
+    h2 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    dt {
+        font-weight: normal;
+    }
+
+    strong {
+        font-weight: 500;
+    }
+}
+
+.far,
+.fab,
+.fas,
+.fa {
+    text-decoration: none !important;
+    margin-right: 5px;
+}
+
+.badge {
+    font-weight: normal;
+    letter-spacing: 0.05rem;
+    color: #2c2c2c !important;
+}
+
+
+@media print {
+    .col-print-1 {
+        flex: 0 0 8.333333%;
+        max-width: 8.333333%;
+    }
+
+    .col-print-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .border-print-0 {
+        border-width: 0 !important;
+    }
+
+    .pb-print-0 {
+        padding-bottom: 0 !important;
+    }
+
+    .mb-print-1 {
+        margin-bottom: 1rem !important;
+    }
+}
+
+.fact-icon {
+    width: 1em;
+    color: var(--light-color);
+    margin-right: 0.5rem;
+}
+
+@page {
+    size: auto;
+    margin: 10mm;
+}
+
+.skills {
+    position: relative;
+    display: inline-block;
+    font-size: 1.2rem;
+}
+
+.skills::after {
+    display: block;
+    content: '••••';
+    color: var(--light-color);
+}
+
+.skills-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+
+.skills-bar::after {
+    display: block;
+    content: '••••';
+    color: var(--bs-primary);
+}
+
+
