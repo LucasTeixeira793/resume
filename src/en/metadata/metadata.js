@@ -22,17 +22,29 @@ module.exports = {
     ['Python', 68],
     ['Machine Learning', 68]
   ],
-  positions: [
+  jobs: [
     {
-      title: 'Banco Safra SA - Jr. analyst',
-      period: 'Jun/23 - Present',
+      positions: [
+        {
+          title: 'Banco Safra SA - Mid-Level System Analyst',
+          period: 'May/25 - Present',
+        },
+        {
+          title: 'Banco Safra SA - Jr. System Analyst',
+          period: 'Jun/23 - May/25',
+        }
+      ],
       skills: ['.NET', 'PL/SQL', 'RabbitMQ', 'MongoDB', 'Kafka', 'Cloud', 'CI/CD', 'Monitoring'],
       contents: 
       "Full Stack Developer involved in designing new features and solving systemic issues for the Payroll Loan product. Experienced in API integration using .NET and procedure development with PL/SQL. Skilled in implementing continuous integration and delivery (CI/CD) through tools such as Jenkins and GitLab CI, depending on project needs. Strong communication skills have been critical to fostering effective team collaboration and delivering high-quality solutions."
     },
     {
-      title: 'Banco Safra SA - Intern',
-      period: 'jan/22 - Jun/23',
+      positions:[
+        {
+          title: 'Banco Safra SA - Intern',
+          period: 'jan/22 - Jun/23',
+        }
+      ],
       skills: ['PL/SQL', '.NET', 'Communication', 'Office 365', 'Git'],
       contents: 
       "Responsible for controlling and responding to calls from the IT area supporting the financial sector, specializing in resolving IT calls related to the Consignment product, developing and maintaining applications and procedures, creating automations to optimize daily processes by evaluating team results through Power BI."
@@ -41,7 +53,7 @@ module.exports = {
   experience: [
     {
       header: 'Capstone Project: jan/24 - dec/24',
-      link: 'https://github.com/tcc-previsao-energia',
+      link: 'https://doi.org/10.5281/zenodo.15670699',
       contents: 'Development of predictive models for the Brazilian stock market using Machine Learning and Deep Learning techniques (ARIMA, Random Forest, and LSTM). Collected and processed historical data using the yfinance library, applied seasonal decomposition, and analyzed model performance across multiple financial assets (VALE3, PETR4, ITUB3).'
     },
     {

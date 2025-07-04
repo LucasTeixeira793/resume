@@ -22,54 +22,32 @@ module.exports = {
     ['Python', 68],
     ['Machine Learning', 68]
   ],
-  positions: [
+  jobs: [
     {
-      title: 'Banco Safra SA - Analista Jr.',
-      period: 'Jun/23 - Atualmente',
+      positions: [
+        {
+          title: 'Banco Safra SA - Analista Pl.',
+          period: 'Mai/25 - Atual'
+        },
+        {
+          title: 'Banco Safra SA - Analista Jr.',
+          period: 'Jun/23 - Mai/25'
+        }
+      ],
       skills: ['.NET', 'PL/SQL', 'RabbitMQ', 'MongoDB', 'Kafka', 'Cloud', 'CI/CD', 'Monitoria'],
       contents: 
       "Desenvolvedor Full Stack, desempenhando papel no desenvolvimento de novas funcionalidades e na resolução de problemas sistêmicos relacionados ao produto de Empréstimo Consignado. Minha experiência envolve a manipulação de APIs em .NET e a criação de procedures em PL/SQL, enquanto utilizo ferramentas como Jenkins ou Gitlab CI, dependendo das necessidades do projeto, para a implementação de integração contínua e entrega contínua. Além disso, meu foco constante na comunicação tem sido essencial para garantir a colaboração eficaz em equipe e a entrega de soluções de alta qualidade."
     },
     {
-      title: 'Banco Safra SA - Estagiário de TI',
-      period: 'jan/22 - Jun/23',
+      positions: [
+        {
+          title: 'Banco Safra SA - Estagiário de TI',
+          period: 'jan/22 - Jun/23',
+        }
+      ],
       skills: ['PL/SQL', '.NET', 'Comunicação', 'Office 365', 'Git'],
       contents: 
       "Responsável pelo controle e atendimento de chamados da área de TI sustentação da financeira, especializado na resolução de chamados de TI referentes ao produto de Consignado, desenvolvia e fazia manutençoes em aplicações e procedures, criei automações para otimizar processos diários avaliando resultados da equipe através do Power BI."
-    }
-  ],
-  experience: [
-    {
-      header: 'TCC: jan/24 - dez/24',
-      link: 'https://github.com/tcc-previsao-energia',
-      contents: 'Desenvolvimento de modelos preditivos para o mercado de ações brasileiro utilizando técnicas de Machine Learning e Deep Learning, como ARIMA, Random Forest e LSTM. O projeto envolveu coleta e tratamento de dados históricos com a biblioteca yfinance, aplicação de decomposição sazonal e análise de desempenho dos modelos em múltiplos ativos financeiros (VALE3, PETR4 e ITUB3).'
-    },
-    {
-      header: 'Kallistra: jan/23 - dez/23',
-      link: '',
-      contents: 'Eu e minha equipe desenvolvemos geradores de dados simulando um dispositivo IoT. Os dados gerados são enviados para a Azure, processados e armazenados na AWS (Experiência me multi-cloud) Juntamente com a implementação de uma Machine Learning simples para reconhecimento de padrões de usuários.'
-    },
-    {
-      header: 'Iara: jan/22 - dez/22',
-      link: 'https://github.com/LucasTeixeira793/iara-backend',
-      contents: 'Atuei como líder de projeto e fui responsável pelo desenvolvimento completo do Backend em Java SpringBoot. Além disso, realizei o provisionamento da aplicação na AWS e implementei o CI/CD utilizando Jenkins. O projeto consistia em uma plataforma de busca e contratação de profissionais de beleza próximos aos usuários.'
-    }
-  ],
-  experienceScreen: [
-    {
-      header: 'SafeLog: jul/21 - dez/21',
-      link: 'https://github.com/nikolas-virionis/Safelog',
-      contents: `Desenvolvi uma plataforma web utilizando Node.js para monitorar CPU, disco e RAM de servidores. Implementei um executável em Java para coletar os dados de monitoramento, que foram armazenados em um banco de dados SQL Server alocado na Azure.`
-    },
-    {
-      header: 'StrongBerry: jan/21 - jun/21',
-      link: '',
-      contents: `criei uma solução para calcular a produção de estufas de morangos. Propus medidas para aumentar a produção, como o controle de temperatura e umidade. O projeto visava otimizar a produção por meio do monitoramento e controle desses fatores-chave. Projeto criado em Node.js e Banco de Dados MySQL`
-    },
-    {
-      header: 'Semstress ABC: mar/19 - dez/20',
-      link: '',
-      contents: `No projeto SemStress, feito como meu TCC do Ensino Médio, criei uma plataforma web que visa facilitar a busca por costureiras e bazares próximos, oferecendo produtos mais acessíveis e promovendo o reconhecimento de vendedores locais. A plataforma foi desenvolvida utilizando Bootstrap, PHP e MySQL.`
     }
   ],
   education: [
@@ -101,6 +79,40 @@ module.exports = {
       contents: [
         "Durante meu período na Wizard, aprimorei minhas habilidades no idioma de forma abrangente e dinâmica. A cada semestre, tive a oportunidade de dar __palestras em inglês__ sobre diversos temas, o que me permitiu fortalecer minha fluência, ganhar confiança na comunicação oral e expandir meu conhecimento em diferentes áreas."
       ]
+    }
+  ],
+  experience: [
+    {
+      header: 'TCC: jan/24 - dez/24',
+      link: 'https://doi.org/10.5281/zenodo.15670699',
+      contents: 'Desenvolvimento de modelos preditivos para o mercado de ações brasileiro utilizando técnicas de Machine Learning e Deep Learning, como ARIMA, Random Forest e LSTM. O projeto envolveu coleta e tratamento de dados históricos com a biblioteca yfinance, aplicação de decomposição sazonal e análise de desempenho dos modelos em múltiplos ativos financeiros (VALE3, PETR4 e ITUB3).'
+    },
+    {
+      header: 'Kallistra: jan/23 - dez/23',
+      link: '',
+      contents: 'Eu e minha equipe desenvolvemos geradores de dados simulando um dispositivo IoT. Os dados gerados são enviados para a Azure, processados e armazenados na AWS (Experiência me multi-cloud) Juntamente com a implementação de uma Machine Learning simples para reconhecimento de padrões de usuários.'
+    },
+    {
+      header: 'Iara: jan/22 - dez/22',
+      link: 'https://github.com/LucasTeixeira793/iara-backend',
+      contents: 'Atuei como líder de projeto e fui responsável pelo desenvolvimento completo do Backend em Java SpringBoot. Além disso, realizei o provisionamento da aplicação na AWS e implementei o CI/CD utilizando Jenkins. O projeto consistia em uma plataforma de busca e contratação de profissionais de beleza próximos aos usuários.'
+    }
+  ],
+  experienceScreen: [
+    {
+      header: 'SafeLog: jul/21 - dez/21',
+      link: 'https://github.com/nikolas-virionis/Safelog',
+      contents: `Desenvolvi uma plataforma web utilizando Node.js para monitorar CPU, disco e RAM de servidores. Implementei um executável em Java para coletar os dados de monitoramento, que foram armazenados em um banco de dados SQL Server alocado na Azure.`
+    },
+    {
+      header: 'StrongBerry: jan/21 - jun/21',
+      link: '',
+      contents: `criei uma solução para calcular a produção de estufas de morangos. Propus medidas para aumentar a produção, como o controle de temperatura e umidade. O projeto visava otimizar a produção por meio do monitoramento e controle desses fatores-chave. Projeto criado em Node.js e Banco de Dados MySQL`
+    },
+    {
+      header: 'Semstress ABC: mar/19 - dez/20',
+      link: '',
+      contents: `No projeto SemStress, feito como meu TCC do Ensino Médio, criei uma plataforma web que visa facilitar a busca por costureiras e bazares próximos, oferecendo produtos mais acessíveis e promovendo o reconhecimento de vendedores locais. A plataforma foi desenvolvida utilizando Bootstrap, PHP e MySQL.`
     }
   ]
 };

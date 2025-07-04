@@ -15,7 +15,7 @@
 </head>
 <body>
 <div class="container page">
-    <div class="border-2 border-print-0 border-dark mb-3 pb-3 pb-print-0 mb-print-1">
+    <div class="border-2 border-print-0 border-dark pb-print-0">
         <div class="row">
             <div class="screen d-block d-sm-none img-perfil-mobile text-center">
                 <img src="assets/me.jpg" class="screen rounded-circle img-fluid minha-foto" alt="Personal photo">
@@ -27,11 +27,10 @@
                 </div>
                 <div>
                     <p>
-                        <time datetime="{{ buildinfo.date }}" class="small">Atualizado em: {{ updated }}</time>
-                    </p>
-                    <p>
-                        <span class="screen"><a href="{{ pdfFileName }}"><i class="far fa-file-pdf"></i>Baixar versão PDF</a></span>
+                        <time datetime="{{ buildinfo.date }}" class="small">Atualizado em: {{ updated }}</time><br>
                         <span class="print" style="text-align: left;">Versão completa e atualizada disponível em <a href="{{ baseUrl }}">{{ baseUrl }}</a></span>
+                        <span class="screen"><a href="{{ pdfFileName }}"><i class="far fa-file-pdf"></i>Baixar versão PDF</a></span><br>
+                        <span class="screen"><a href="https://lucasteixeira793.github.io/resume/en/"><i class="fa fa-globe"></i><i>English Version</i></a></span>                        
                     </p>
                 </div>
             </div>
@@ -69,15 +68,18 @@
 
     <div class="expProf border-bottom border-2 border-print-0 border-dark mb-5 pb-5 pb-print-0 mb-print-1">
         <h2>Experiência Profissional</h2>
-        {{#each positions}}
+        {{#each jobs}}
         <div class="screen">
             <div class="row d-block d-md-flex">
-                <div class="col-md-2 pt-1">
-                    {{ period }}
+                <div class="col-md-2">
+                    {{#each positions}}
+                    {{ period }} <br>
+                    {{/each}}
                 </div>
                 <div class="col-md-10">
+                    {{#each positions}}
                     <h3 class="fs-5 fw-normal titulo-sub">{{ title }}</h3>
-    
+                    {{/each}}
                     <div>{{{markdown contents }}}</div>
     
                     <p>
@@ -91,8 +93,9 @@
         <div class="print">
             <div class="row d-block d-md-flex">
                 <div class="col-md-10">
-                    <span class=""><span style="font-weight: bold">{{ title }} </span> - {{ period }}</span>
-    
+                    {{#each positions}}
+                    <span class=""><span style="font-weight: bold">{{ title }} </span> - {{ period }}</span><br>
+                    {{/each}}
                     <div>{{{markdown contents }}}</div>
     
                     <p>
@@ -151,7 +154,7 @@
     {{#each experienceScreen}}
     <div class="mb-6">
         <h5 class="fs-5 fw-normal txt-black screen titulo-sub projetos-screen-ttl">{{ header }}</h5>
-        <h5 class="fs-5 fw-normal txt-black print titulo-sub projetos-screen-ttl">{{ header }}</h5>
+        <h5 class="fs-5 fw-normal txt-black print titulo-sub projetos-screen-ttl">{{ header }} (Mais detalhes no link acima)</h5>
         <div class="screen">
             {{{markdown contents }}}
         </div>
