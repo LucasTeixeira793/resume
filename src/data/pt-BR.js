@@ -1,6 +1,7 @@
 export const ptBR = {
   name: 'Lucas Menezes Teixeira',
   title: 'Bacharel em Ciência da Computação',
+  description:'Atualmente atuando como desenvolvedor Back-end no Banco Safra SA. Apaixonado por tecnologia, busco desafios que ampliem minhas habilidades em arquitetura de sistemas e soluções escaláveis.',
   facts: {
     'Residência': '<a href="https://www.google.com/maps/place/Ribeir%C3%A3o+Pires,+SP/@-23.6937547,-46.4785759,12z/data=!3m1!4b1!4m6!3m5!1s0x94ce6d00aafd1e81:0xc51dec6c655d6878!8m2!3d-23.7116426!4d-46.4123086!16zL20vMGc3amQ2"><i class="fa fa-home fact-icon"></i>Ribeirão Pires - SP</a>',
     'WhatsApp': `<a href="https://wa.me/5511943791429?text=Ol%C3%A1+Lucas%2C+vi+seu+curr%C3%ADculo+e+gostaria+de+saber+se+voc%C3%AA+est%C3%A1+aberto+a+novas+oportunidades+profissionais.+Se+sim%2C+poder%C3%ADamos+marcar+uma+conversa%3F"><i class="fa-brands fa-whatsapp  fact-icon"></i>+55 (11) 94379-1429</a>`,

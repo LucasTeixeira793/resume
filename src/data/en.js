@@ -1,6 +1,7 @@
 export const en = {
   name: 'Lucas Menezes Teixeira',
   title: 'Bachelor of Computer Science',
+  description:'Currently working as a Back-end Developer at Banco Safra S.A. Passionate about technology, I am looking for challenges that broaden my expertise in systems architecture and scalable solutions.',
   facts: {
     'Residence': '<a href="https://www.google.com/maps/place/Ribeir%C3%A3o+Pires,+SP/@-23.6937547,-46.4785759,12z/data=!3m1!4b1!4m6!3m5!1s0x94ce6d00aafd1e81:0xc51dec6c655d6878!8m2!3d-23.7116426!4d-46.4123086!16zL20vMGc3amQ2"><i class="fa fa-home fact-icon"></i>Ribeirão Pires - SP</a>',
     'WhatsApp': `<a href="https://wa.me/5511943791429?text=Hi%20Lucas%2C%20I%20saw%20your%20resume%20and%20would%20like%20to%20know%20if%20you%20are%20open%20to%20new%20professional%20opportunities.%20If%20so%2C%20could%20we%20schedule%20a%20conversation%3F"><i class="fa-brands fa-whatsapp  fact-icon"></i>+55 (11) 94379-1429</a>`,
