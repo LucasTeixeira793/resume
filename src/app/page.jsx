@@ -4,9 +4,13 @@ import { useState } from 'react';
 import { resumeData } from '@/data';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Globe, Download, Database, Cloud, Code, Terminal, Layers, BrainCircuit, MessageCircle, GitMerge } from 'lucide-react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import {
+  Globe, Download, Database, Cloud, Code, Terminal,
+  Layers, BrainCircuit, MessageCircle, GitMerge,
+  GraduationCap, Book
+} from 'lucide-react';
 
 const getSkillStyle = (skillName) => {
   const styles = {
@@ -118,7 +122,7 @@ export default function Home() {
               </div>
 
               <p className="text-slate-500 leading-relaxed text-base md:text-lg max-w-3xl">
-                {data.description}
+                {data.description || 'Atualmente atuando como desenvolvedor Back-end no Banco Safra SA. Apaixonado por tecnologia, busco desafios que ampliem minhas habilidades em arquitetura de sistemas e soluções escaláveis.'}
               </p>
 
               <Button
@@ -224,8 +228,8 @@ export default function Home() {
                         </div>
 
                         <div className={`px-4 py-1.5 rounded-full text-[0.75rem] font-medium whitespace-nowrap ${job.isCurrent
-                            ? 'bg-violet-50 text-violet-600'
-                            : 'bg-slate-100 text-slate-400'
+                          ? 'bg-violet-50 text-violet-600'
+                          : 'bg-slate-100 text-slate-400'
                           }`}>
                           {job.period}
                         </div>
@@ -244,8 +248,77 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="educacao" className="w-full bg-white py-20 md:py-28 scroll-mt-16 min-h-[50vh]">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-12 text-center text-slate-400 italic">
+        <section id="educacao" className="w-full bg-white py-20 md:py-28 scroll-mt-16">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+
+            <div className="flex items-center gap-6 mb-16">
+              <h2 className="text-xl font-medium text-slate-700 whitespace-nowrap">
+                {lang === 'pt' ? 'Educação' : 'Education'}
+              </h2>
+              <div className="h-[1px] bg-slate-200 flex-1"></div>
+            </div>
+
+            <div className="relative max-w-5xl mx-auto">
+
+              <div className="absolute left-[19px] md:left-1/2 top-2 bottom-2 w-[2px] bg-violet-200 md:-translate-x-1/2"></div>
+
+              {data.education.map((edu, index) => {
+                const isLeft = index % 2 === 0;
+
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className={`relative flex flex-col md:flex-row items-start md:items-center justify-between mb-12 ${isLeft ? 'md:flex-row-reverse' : ''
+                      }`}
+                  >
+                    <div className="hidden md:block md:w-[45%]"></div>
+
+                    <div className="absolute left-[11px] md:left-1/2 transform md:-translate-x-1/2 w-[18px] h-[18px] rounded-full bg-violet-600 shadow-[0_0_0_4px_white] z-10 mt-7 md:mt-0"></div>
+
+                    <div className="w-full pl-12 md:pl-0 md:w-[45%]">
+                      <Card className="border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300">
+                        <CardContent className="p-8">
+
+                          <div className="mb-4 space-y-1">
+                            <h3 className="text-[1.15rem] font-bold text-slate-800 leading-tight">
+                              {edu.title.includes(' - ') ? edu.title.split(' - ')[0] : edu.title}
+                            </h3>
+                            {edu.title.includes(' - ') && (
+                              <p className="text-[1rem] text-slate-500 font-medium">
+                                {edu.title.split(' - ')[1]}
+                              </p>
+                            )}
+                          </div>
+
+                          <p className="text-slate-500 text-[0.9rem] leading-relaxed mb-6">
+                            {edu.contents}
+                          </p>
+
+                          {edu.techs && edu.techs.length > 0 && (
+                            <div className="flex flex-wrap gap-2">
+                              {edu.techs.map((tech, tIdx) => (
+                                <span
+                                  key={tIdx}
+                                  className="px-3 py-1 border border-violet-300 text-violet-500 bg-transparent text-[0.75rem] font-medium rounded-md"
+                                >
+                                  {tech}
+                                </span>
+                              ))}
+                            </div>
+                          )}
+
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+
           </div>
         </section>
 
