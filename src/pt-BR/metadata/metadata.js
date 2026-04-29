@@ -5,7 +5,7 @@ module.exports = {
     'Residência': '<a href="https://www.google.com/maps/place/Ribeir%C3%A3o+Pires,+SP/@-23.6937547,-46.4785759,12z/data=!3m1!4b1!4m6!3m5!1s0x94ce6d00aafd1e81:0xc51dec6c655d6878!8m2!3d-23.7116426!4d-46.4123086!16zL20vMGc3amQ2"><i class="fa fa-home fact-icon"></i>Ribeirão Pires - SP</a>',
     'WhatsApp': `<a href="https://wa.me/5511943791429?text=Ol%C3%A1+Lucas%2C+vi+seu+curr%C3%ADculo+e+gostaria+de+saber+se+voc%C3%AA+est%C3%A1+aberto+a+novas+oportunidades+profissionais.+Se+sim%2C+poder%C3%ADamos+marcar+uma+conversa%3F"><i class="fa-brands fa-whatsapp  fact-icon"></i>+55 (11) 94379-1429</a>`,
     'GitHub': `<a href="https://github.com/LucasTeixeira793"><i class="fa-brands fa-github fact-icon"></i>LucasTeixeira793</a>`,
-    'LinkedIn': `<a href="https://www.linkedin.com/in/lucas-menezes-teixeira-79b7a51a2/"><i class="fa-brands fa-linkedin fact-icon"></i>Lucas Menezes Teixeira</a>`,
+    'LinkedIn': `<a href="https://www.linkedin.com/in/lucas-menezes-teixeira/"><i class="fa-brands fa-linkedin fact-icon"></i>Lucas Menezes Teixeira</a>`,
     'Email': '<a href="mailto:teixeiralucas793@outlook.com"><i class="fa fa-envelope fact-icon"></i>teixeiralucas793@outlook.com</a>'
   },
   skills: [
@@ -26,28 +26,35 @@ module.exports = {
     {
       positions: [
         {
-          title: 'Banco Safra SA - Analista Pl.',
+          title: 'Engenheiro de Software (Pleno) - Banco Safra SA',
           period: 'Mai/25 - Atual'
         },
-        {
-          title: 'Banco Safra SA - Analista Jr.',
-          period: 'Jun/23 - Mai/25'
-        }
       ],
-      skills: ['.NET', 'PL/SQL', 'RabbitMQ', 'MongoDB', 'Kafka', 'Cloud', 'CI/CD', 'Monitoria'],
+      skills: ['.NET', 'Microsserviços', 'RabbitMQ', 'Redis', 'MongoDB', 'Serviços de integração'],
       contents: 
-      "Desenvolvedor Full Stack, desempenhando papel no desenvolvimento de novas funcionalidades e na resolução de problemas sistêmicos relacionados ao produto de Empréstimo Consignado. Minha experiência envolve a manipulação de APIs em .NET e a criação de procedures em PL/SQL, enquanto utilizo ferramentas como Jenkins ou Gitlab CI, dependendo das necessidades do projeto, para a implementação de integração contínua e entrega contínua. Além disso, meu foco constante na comunicação tem sido essencial para garantir a colaboração eficaz em equipe e a entrega de soluções de alta qualidade."
+      "Liderei a idealização e desenvolvimento do processo de contratação do Crédito do Trabalhador, suportando ~1 Milhão de solicitações no lançamento, utilizando arquitetura resiliente e escalável. Aprimorei a pós-venda do Crédito do Trabalhador, reduzindo fricções operacionais e melhorando a experiência do cliente, através de refinamento contínuo das regras de negócio e integrações. Desenvolvi e integrei um agente de IA especializado no Crédito do Trabalhador, aumentando a assertividade no planejamento das demandas, utilizando a IA aplicada e integração com ferramenta de chat para suporte ao time técnico e de negócio."
     },
     {
       positions: [
         {
-          title: 'Banco Safra SA - Estagiário de TI',
+          title: 'Engenheiro de Software (Junior) - Banco Safra SA',
+          period: 'Jun/23 - Mai/25'
+        }
+      ],
+      skills: ['.NET', 'Sistemas Distribuídos', 'APIs', 'PL/SQL', 'RabbitMQ', 'Arquitetura baseada em eventos'],
+      contents: 
+      "Refatorei a esteira de contratação de empréstimos, reduzindo o tempo de transição entre etapas de minutos para segundos, substituindo processamento em batch por uma arquitetura baseada a eventos. Reestruturei o fluxo de Portabilidade e Refinanciamento, reduzindo o tempo da liberação de crédito de ~7 dias para o mesmo dia, através do redesenho do processo e otimização de integrações."
+    },
+    {
+      positions: [
+        {
+          title: 'Analista de Sistemas (Estagiário) - Banco Safra SA',
           period: 'jan/22 - Jun/23',
         }
       ],
-      skills: ['PL/SQL', '.NET', 'Comunicação', 'Office 365', 'Git'],
+      skills: ['.NET', 'Automação', 'Angular', 'TypeScript', 'REST APIs'],
       contents: 
-      "Responsável pelo controle e atendimento de chamados da área de TI sustentação da financeira, especializado na resolução de chamados de TI referentes ao produto de Consignado, desenvolvia e fazia manutençoes em aplicações e procedures, criei automações para otimizar processos diários avaliando resultados da equipe através do Power BI."
+      "Desenvolvi uma dashboard de monitoramento em tempo real, melhorando a visibilidade da saúde do sistema, para acompanhamento de processos críticos. Automatizei a distribuição de chamados, eliminando a triagem manual e aumentando a eficiência operacional, através do desenvolvimento de um robô integrado à plataforma de governança de TI."
     }
   ],
   education: [

@@ -5,7 +5,7 @@ module.exports = {
     'Residence': '<a href="https://www.google.com/maps/place/Ribeir%C3%A3o+Pires,+SP/@-23.6937547,-46.4785759,12z/data=!3m1!4b1!4m6!3m5!1s0x94ce6d00aafd1e81:0xc51dec6c655d6878!8m2!3d-23.7116426!4d-46.4123086!16zL20vMGc3amQ2"><i class="fa fa-home fact-icon"></i>Ribeirão Pires - SP</a>',
     'WhatsApp': `<a href="https://wa.me/5511943791429?text=Hi%20Lucas%2C%20I%20saw%20your%20resume%20and%20would%20like%20to%20know%20if%20you%20are%20open%20to%20new%20professional%20opportunities.%20If%20so%2C%20could%20we%20schedule%20a%20conversation%3F"><i class="fa-brands fa-whatsapp  fact-icon"></i>+55 (11) 94379-1429</a>`,
     'GitHub': `<a href="https://github.com/LucasTeixeira793"><i class="fa-brands fa-github fact-icon"></i>LucasTeixeira793</a>`,
-    'LinkedIn': `<a href="https://www.linkedin.com/in/lucas-menezes-teixeira-79b7a51a2/"><i class="fa-brands fa-linkedin fact-icon"></i>Lucas Menezes Teixeira</a>`,
+    'LinkedIn': `<a href="https://www.linkedin.com/in/lucas-menezes-teixeira/"><i class="fa-brands fa-linkedin fact-icon"></i>Lucas Menezes Teixeira</a>`,
     'Email': '<a href="mailto:teixeiralucas793@outlook.com"><i class="fa fa-envelope fact-icon"></i>teixeiralucas793@outlook.com</a>'
   },
   skills: [
@@ -26,28 +26,35 @@ module.exports = {
     {
       positions: [
         {
-          title: 'Banco Safra SA - Mid-Level System Analyst',
+          title: 'Software Engineer (Mid-Level) - Banco Safra SA ',
           period: 'May/25 - Present',
         },
+      ],
+      skills: ['.NET', 'Microservices', 'RabbitMQ', 'Redis', 'MongoDB', 'Integration Services'],
+      contents: 
+      "Led the design and development of a Private Payroll-Deductible Loan origination system, handling ~1 million loan requests at launch, using a resilient and scalable architecture.Enhanced post-sale workflows for the payroll loan product, reducing operational friction and improving customer experience, through continuous refinement of business rules and integrations. Implemented an AI-powered agent specialized in the payroll loan product, improving demand planning accuracy for tech and business teams, integrated with internal chat tools."
+    },
+    {
+      positions: [
         {
-          title: 'Banco Safra SA - Jr. System Analyst',
+          title: 'Software Engineer (Junior) - Banco Safra SA',
           period: 'Jun/23 - May/25',
         }
       ],
-      skills: ['.NET', 'PL/SQL', 'RabbitMQ', 'MongoDB', 'Kafka', 'Cloud', 'CI/CD', 'Monitoring'],
+      skills: ['.NET', 'Distributed Systems', 'APIs', 'PL/SQL', 'RabbitMQ', 'Event-driven architecture'],
       contents: 
-      "Full Stack Developer involved in designing new features and solving systemic issues for the Payroll Loan product. Experienced in API integration using .NET and procedure development with PL/SQL. Skilled in implementing continuous integration and delivery (CI/CD) through tools such as Jenkins and GitLab CI, depending on project needs. Strong communication skills have been critical to fostering effective team collaboration and delivering high-quality solutions."
+      "Redesigned the Portability and Refinancing flow, reducing loan disbursement time from ~7 days to sameday funding, by optimizing process flows and integrations. Refactored the loan origination pipeline, reducing stage transition time from minutes to seconds, by replacing batch processing with an event-driven architecture using RabbitMQ."
     },
     {
       positions:[
         {
-          title: 'Banco Safra SA - Intern',
+          title: 'System Analyst (Intern) - Banco Safra SA',
           period: 'jan/22 - Jun/23',
         }
       ],
-      skills: ['PL/SQL', '.NET', 'Communication', 'Office 365', 'Git'],
+      skills: ['.NET', 'Automation scripts', 'Angular', 'TypeScript', 'REST APIs'],
       contents: 
-      "Responsible for controlling and responding to calls from the IT area supporting the financial sector, specializing in resolving IT calls related to the Consignment product, developing and maintaining applications and procedures, creating automations to optimize daily processes by evaluating team results through Power BI."
+      "Automated ticket triage and assignment, eliminating manual workload and improving operational efficiency, by developing a bot integrated with the governance platform.Developed a real-time monitoring dashboard, increasing system observability and operational visibility, using Angular for tracking critical processes."
     }
   ],
   experience: [
