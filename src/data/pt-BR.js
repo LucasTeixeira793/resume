@@ -112,5 +112,44 @@ export const ptBR = {
       link: '',
       contents: `No projeto SemStress, feito como meu TCC do Ensino Médio, criei uma plataforma web que visa facilitar a busca por costureiras e bazares próximos, oferecendo produtos mais acessíveis e promovendo o reconhecimento de vendedores locais. A plataforma foi desenvolvida utilizando Bootstrap, PHP e MySQL.`
     }
+  ],
+  projects: [
+    {
+      title: "TCC",
+      period: "jan/24 - dez/24",
+      contents: "Durante meu período na Wizard, aprimorei minhas habilidades no idioma de forma abrangente e dinâmica. A cada semestre, tive a oportunidade de dar palestras em inglês sobre diversos temas, o que me permitiu fortalecer minha fluência, ganhar confiança na comunicação oral e expandir meu conhecimento em diferentes áreas.",
+      techs: ["React", "Node.js"], // Pode alterar as tecnologias
+      link: "https://github.com/seu-usuario/tcc" // Link do repositório
+    },
+    {
+      title: "Kallistra",
+      period: "jan/23 - dez/23",
+      contents: "Durante meu período na Wizard, aprimorei minhas habilidades no idioma de forma abrangente e dinâmica. A cada semestre, tive a oportunidade de dar palestras em inglês sobre diversos temas, o que me permitiu fortalecer minha fluência, ganhar confiança na comunicação oral e expandir meu conhecimento em diferentes áreas.",
+      techs: [".NET", "SQL Server"]
+    },
+    {
+      title: "Iara",
+      period: "jan/22 - dez/22",
+      contents: "Durante meu período na Wizard, aprimorei minhas habilidades no idioma de forma abrangente e dinâmica. A cada semestre, tive a oportunidade de dar palestras em inglês sobre diversos temas, o que me permitiu fortalecer minha fluência, ganhar confiança na comunicação oral e expandir meu conhecimento em diferentes áreas.",
+      techs: ["Python", "Machine Learning"]
+    },
+    {
+      title: "SafeLog",
+      period: "jan/22 - dez/22",
+      contents: "Durante meu período na Wizard, aprimorei minhas habilidades no idioma de forma abrangente e dinâmica. A cada semestre, tive a oportunidade de dar palestras em inglês sobre diversos temas, o que me permitiu fortalecer minha fluência, ganhar confiança na comunicação oral e expandir meu conhecimento em diferentes áreas.",
+      techs: ["Java", "RabbitMQ"]
+    },
+    {
+      title: "StrongBerry",
+      period: "jan/21 - jun/21",
+      contents: "Durante meu período na Wizard, aprimorei minhas habilidades no idioma de forma abrangente e dinâmica. A cada semestre, tive a oportunidade de dar palestras em inglês sobre diversos temas, o que me permitiu fortalecer minha fluência, ganhar confiança na comunicação oral e expandir meu conhecimento em diferentes áreas.",
+      techs: ["JavaScript", "HTML/CSS"]
+    },
+    {
+      title: "Semstress ABC",
+      period: "mar/19 - dez/20",
+      contents: "Durante meu período na Wizard, aprimorei minhas habilidades no idioma de forma abrangente e dinâmica. A cada semestre, tive a oportunidade de dar palestras em inglês sobre diversos temas, o que me permitiu fortalecer minha fluência, ganhar confiança na comunicação oral e expandir meu conhecimento em diferentes áreas.",
+      techs: ["PHP", "MySQL"]
+    }
   ]
 };

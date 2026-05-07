@@ -112,5 +112,45 @@ export const en = {
         "Enhanced English language proficiency through a dynamic and comprehensive program. Delivered presentations in English on various topics each semester, strengthening oral communication skills, building confidence, and expanding knowledge across different fields."
       ]
     }
+  ],
+
+  projects: [
+    {
+      title: "TCC",
+      period: "Jan/24 - Dec/24",
+      contents: "During my time at Wizard, I comprehensively and dynamically improved my language skills. Every semester, I had the opportunity to give lectures in English on various topics, which allowed me to strengthen my fluency, gain confidence in oral communication, and expand my knowledge in different areas.",
+      techs: ["React", "Node.js"],
+      link: "https://github.com/your-username/tcc"
+    },
+    {
+      title: "Kallistra",
+      period: "Jan/23 - Dec/23",
+      contents: "During my time at Wizard, I comprehensively and dynamically improved my language skills. Every semester, I had the opportunity to give lectures in English on various topics, which allowed me to strengthen my fluency, gain confidence in oral communication, and expand my knowledge in different areas.",
+      techs: [".NET", "SQL Server"]
+    },
+    {
+      title: "Iara",
+      period: "Jan/22 - Dec/22",
+      contents: "During my time at Wizard, I comprehensively and dynamically improved my language skills. Every semester, I had the opportunity to give lectures in English on various topics, which allowed me to strengthen my fluency, gain confidence in oral communication, and expand my knowledge in different areas.",
+      techs: ["Python", "Machine Learning"]
+    },
+    {
+      title: "SafeLog",
+      period: "Jan/22 - Dec/22",
+      contents: "During my time at Wizard, I comprehensively and dynamically improved my language skills. Every semester, I had the opportunity to give lectures in English on various topics, which allowed me to strengthen my fluency, gain confidence in oral communication, and expand my knowledge in different areas.",
+      techs: ["Java", "RabbitMQ"]
+    },
+    {
+      title: "StrongBerry",
+      period: "Jan/21 - Jun/21",
+      contents: "During my time at Wizard, I comprehensively and dynamically improved my language skills. Every semester, I had the opportunity to give lectures in English on various topics, which allowed me to strengthen my fluency, gain confidence in oral communication, and expand my knowledge in different areas.",
+      techs: ["JavaScript", "HTML/CSS"]
+    },
+    {
+      title: "Semstress ABC",
+      period: "Mar/19 - Dec/20",
+      contents: "During my time at Wizard, I comprehensively and dynamically improved my language skills. Every semester, I had the opportunity to give lectures in English on various topics, which allowed me to strengthen my fluency, gain confidence in oral communication, and expand my knowledge in different areas.",
+      techs: ["PHP", "MySQL"]
+    }
   ]
 };
