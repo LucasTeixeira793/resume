@@ -1,0 +1,182 @@
+---
+description: Diretrizes do portfólio/currículo de Lucas Menezes Teixeira — funcionalidades, estilos e regras para alterações
+alwaysApply: true
+---
+
+# Guidelines — Resume / Portfólio
+
+## Visão geral
+
+Site pessoal de currículo e portfólio de **Lucas Menezes Teixeira**, desenvolvedor Back-end no Banco Safra SA. Aplicação **SPA de página única** em Next.js (App Router).
+
+- **Objetivo**: apresentar perfil profissional, habilidades, experiência, educação e projetos, com suporte bilíngue (PT/EN).
+- **Público**: recrutadores e contatos profissionais.
+- **Deploy previsto**: estático ou Vercel (Next.js App Router).
+
+## Stack
+
+| Camada | Tecnologia |
+|--------|------------|
+| Framework | Next.js **16.2.4** (App Router) — **APIs podem diferir da documentação clássica**; consultar `node_modules/next/dist/docs/` antes de codificar |
+| UI | React 19, JSX (sem TypeScript) |
+| Estilo | Tailwind CSS 4, shadcn/ui (`radix-nova`, `baseColor: neutral`) |
+| Animações | Framer Motion |
+| Ícones | Lucide React (+ SVGs customizados para GitHub e LinkedIn) |
+| Fonte | Montserrat via `next/font/google` |
+| Contato | FormSubmit.co (formulário HTML virtual, evita CORS/AdBlock) |
+
+## Estrutura de pastas
+
+```
+src/
+  app/
+    layout.jsx      # Layout raiz, metadata, fonte Montserrat
+    page.jsx        # Página principal (client component com toda a UI)
+    globals.css     # Tailwind + tokens shadcn
+  data/
+    index.js        # export resumeData { pt, en }
+    pt-BR.js        # Conteúdo em português
+    en.js           # Conteúdo em inglês
+  components/ui/    # shadcn: Button, Card
+  lib/utils.js      # cn() — clsx + tailwind-merge
+public/             # me.png (foto do perfil)
+```
+
+**Alias de importação**: `@/*` → `src/*` (definido em `jsconfig.json`).
+
+## Funcionalidades
+
+### Navbar (sticky)
+- Nome do candidato, links de âncora com scroll suave (`#habilidades`, `#experiencia`, `#educacao`, `#projetos`).
+- Toggle de idioma PT ↔ EN (`useState('pt' | 'en')`).
+- Botão **Baixar CV** baixa o PDF estático de `public/cv/` conforme idioma ativo. PDFs são mantidos manualmente — ver `src/lib/cv.js` para os caminhos.
+
+### Hero (`#topo`)
+- Foto circular (`/me.png` via `next/image`).
+- Nome, título, descrição (de `data`).
+- Botão **Entre em Contato** abre modal.
+
+### Habilidades (`#habilidades`)
+- Grid responsivo de cards com ícone, nome e categoria.
+- Mapeamento visual em `getSkillStyle()` — **chaves devem corresponder ao nome da skill no idioma ativo** (ex.: `'Inglês'` em PT, `'English'` em EN).
+
+### Experiência (`#experiencia`)
+- `data.jobs` é achatado em `flatJobs`: cada `position` vira um card.
+- Formato do título: `"Empresa - Cargo"` (split por `' - '`).
+- `contents` só aparece na última posição quando há múltiplas posições na mesma empresa.
+- Badge de período: destaque violeta se contém `"atual"` ou `"present"`.
+
+### Educação (`#educacao`)
+- Timeline alternada (zigzag) em desktop.
+- Campos: `title`, `contents`, `techs` (tags violeta).
+- `title` pode conter `"Instituição - Curso"` (split automático).
+
+### Projetos (`#projetos`)
+- Grid 2 colunas com preview (`line-clamp-4`) e modal de detalhes.
+- Ícones por nome em `getProjectIcon()` (TCC, Kallistra, Iara, SafeLog, StrongBerry, Semstress ABC).
+- Modal exibe `contents`, `techs` e link opcional (`project.link`).
+
+### Modal de contato
+- Formulário: nome, e-mail, mensagem.
+- Envio via formulário HTML oculto POST para `https://formsubmit.co/teixeiralucas793@outlook.com`.
+- Painel lateral: e-mail, LinkedIn, GitHub (links hardcoded em `page.jsx`).
+
+### Footer
+- Copyright dinâmico com `data.name`.
+
+## Modelo de dados (`src/data/`)
+
+Conteúdo **sempre nos arquivos de dados**, não hardcoded no JSX (exceto links de redes no modal e config do FormSubmit).
+
+```js
+// Chaves usadas pela página atual
+{
+  name, title, description,
+  skills: [['Nome', nivel], ...],  // nivel não é exibido na UI atual
+  jobs: [{ positions: [{ title, period }], contents, skills }],
+  education: [{ title, contents, techs?, period?, type? }],
+  projects: [{ title, period, contents, techs?, link? }]
+}
+```
+
+**Regra de i18n**: qualquer alteração de conteúdo deve ser feita em **ambos** `pt-BR.js` e `en.js`. Chaves de idioma em `resumeData`: `pt` e `en`.
+
+## Design system e estilos
+
+### Paleta e identidade
+- **Cor de destaque**: `violet-600` / `violet-700` (hover) — botões, links, badges, timeline.
+- **Neutros**: `slate-50` (fundos alternados), `slate-800/900` (texto), `slate-400/500` (secundário).
+- **Seções alternadas**: branco (`bg-white`) ↔ `bg-slate-50`.
+- **Largura máxima**: `max-w-[1400px]` com padding `px-6 md:px-12`.
+
+### Tipografia
+- Fonte: Montserrat (`font-sans`), `antialiased`.
+- Títulos de seção: `text-xl font-medium text-slate-700` + linha divisória `h-[1px] bg-slate-200`.
+- Hero H1: `text-4xl md:text-5xl font-bold`.
+
+### Componentes visuais
+- **Cards**: shadcn `Card` + `CardContent`, bordas suaves, sombras leves (`shadow-sm`, `shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)]`).
+- **Botões primários**: `bg-violet-600 hover:bg-violet-700 rounded-full` (navbar) ou `rounded-xl` (ações).
+- **Modais**: overlay `bg-slate-900/40 backdrop-blur-sm`, `z-[100]`, animação scale/fade (Framer Motion `AnimatePresence`).
+- **Âncoras**: `scroll-mt-16` nas seções (compensa navbar sticky de `h-16`).
+
+### Animações (Framer Motion)
+- Hero: fade + slide up na montagem.
+- Grids: `whileInView` com `viewport={{ once: true }}`, stagger nos filhos.
+- Cards: `whileHover={{ scale: 1.02 }}` em skills.
+- Manter animações sutis e performáticas; não bloquear interação.
+
+### Responsividade
+- Navbar: links ocultos em `< lg` (sem menu mobile hamburger ainda).
+- Hero: coluna em mobile, linha em `md+`.
+- Educação: timeline central só em `md+`; mobile empilha à esquerda.
+
+## Regras para alterações
+
+### Código
+1. **`page.jsx` é `'use client'`** — interatividade (estado, scroll, modais) fica aqui ou em componentes filhos client.
+2. **Preferir JSX** — projeto não usa TypeScript (`components.json`: `"tsx": false`).
+3. **Usar `@/`** para imports internos; componentes shadcn em `@/components/ui/`.
+4. **Usar `cn()`** ao compor classes Tailwind em componentes reutilizáveis.
+5. **Novos ícones de skill/projeto**: atualizar `getSkillStyle` / `getProjectIcon` com fallback (`Code` / `FolderCode`).
+6. **Textos de UI** (labels de nav, botões, modais): manter condicional `lang === 'pt' ? ... : ...` ou extrair para objeto de traduções se crescer.
+7. **Imagens**: colocar em `public/`; usar `next/image` com `fill` ou dimensões explícitas.
+8. **Não commitar**: `.next/`, `node_modules/`, `.env*`, `dist/`.
+9. **EditorConfig**: JS com indentação 2 espaços, LF, final newline.
+
+### Conteúdo
+1. Editar `src/data/pt-BR.js` e `src/data/en.js` em paralelo.
+2. Ao adicionar skill, registrar estilo em `getSkillStyle` para **ambos os nomes** (PT e EN) ou usar chave normalizada.
+3. Projetos: `title` deve bater com chave em `getProjectIcon`.
+4. `education.contents` — preferir **string**; arrays do legado podem quebrar renderização atual.
+
+### UI/UX
+1. Manter consistência violeta + slate; não introduzir paletas conflitantes.
+2. Novas seções: seguir padrão título + linha divisória + `scroll-mt-16` + alternância de fundo.
+3. Modais: sempre backdrop clicável para fechar, botão X, `AnimatePresence`.
+4. Links externos: `target="_blank"` + `rel="noreferrer"`.
+
+### Next.js 16
+- Ler guias em `node_modules/next/dist/docs/` antes de usar APIs novas ou migrar rotas.
+- `AGENTS.md` reforça que esta versão tem breaking changes em relação ao Next.js clássico.
+
+## Débitos técnicos conhecidos
+
+- Navbar sem menu mobile para links de seção.
+- Links GitHub inconsistentes: modal usa `lucasteixeira793` (minúsculo).
+- `education.contents` como array em PT não é tratado na UI.
+
+## Comandos
+
+```bash
+npm run dev    # desenvolvimento (localhost:3000)
+npm run build  # build de produção
+npm run start  # servidor de produção
+```
+
+## O que NÃO fazer
+
+- Não mover conteúdo de currículo para strings soltas no JSX.
+- Não adicionar TypeScript sem decisão explícita do autor.
+- Não usar `fetch` direto para FormSubmit — usar o padrão de form HTML virtual já implementado.
+- Não criar arquivos de documentação extras (README, etc.) sem solicitação.

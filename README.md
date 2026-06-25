@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Resume — Portfólio de Lucas Menezes Teixeira
 
-## Getting Started
+Site pessoal de currículo e portfólio profissional, construído com Next.js. Apresenta perfil, habilidades, experiência, educação e projetos com suporte bilíngue (PT/EN).
 
-First, run the development server:
+## Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Next.js 16** (App Router)
+- **React 19** + JSX
+- **Tailwind CSS 4** + shadcn/ui
+- **Framer Motion** (animações)
+
+## Funcionalidades
+
+- Página única com navegação por âncoras e scroll suave
+- Alternância de idioma (português / inglês)
+- Modal de contato via [FormSubmit](https://formsubmit.co)
+- Modal de detalhes dos projetos
+- **Download do CV** em PDF (versão PT ou EN conforme idioma ativo)
+
+## Estrutura
+
+```
+src/
+  app/page.jsx      # Página principal
+  data/
+    pt-BR.js        # Conteúdo em português
+    en.js           # Conteúdo em inglês
+  lib/cv.js         # Caminhos dos PDFs para download
+  components/ui/    # Button, Card (shadcn)
+public/
+  me.png            # Foto do perfil
+  cv/
+    CV-Lucas-Teixeira-pt.pdf
+    CV-Lucas-Teixeira-en.pdf
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Como rodar
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Acesse [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+## Build e deploy
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+npm run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Atualizar o CV em PDF
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Os PDFs são arquivos estáticos em `public/cv/`, mantidos manualmente:
 
-## Deploy on Vercel
+| Arquivo | Idioma |
+|---------|--------|
+| `CV-Lucas-Teixeira-pt.pdf` | Português |
+| `CV-Lucas-Teixeira-en.pdf` | Inglês |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Para alterar o currículo em PDF, substitua o arquivo correspondente. Se usar um nome diferente, atualize os caminhos em `src/lib/cv.js`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+O conteúdo exibido no site (`src/data/`) é independente dos PDFs — alterações no site não atualizam o PDF automaticamente.
+
+## Editar conteúdo do site
+
+Todo o texto do portfólio fica em `src/data/pt-BR.js` e `src/data/en.js`. Mantenha os dois arquivos sincronizados ao adicionar ou alterar informações.
+
+Ícones de habilidades e projetos são mapeados em `getSkillStyle()` e `getProjectIcon()` dentro de `src/app/page.jsx`.
+
+## Deploy
+
+Compatível com [Vercel](https://vercel.com) e qualquer host que suporte Next.js.
+
+## Licença
+
+Projeto pessoal — uso livre para referência, sem garantias.

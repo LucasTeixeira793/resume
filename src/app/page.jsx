@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { resumeData } from '@/data';
+import { CV_FILES } from '@/lib/cv';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
@@ -94,7 +95,7 @@ export default function Home() {
       // Cria um formulário HTML virtual para enviar os dados
       const form = document.createElement('form');
       form.method = 'POST';
-      form.action = 'https://formsubmit.co/teixeiralucas793@gmail.com';
+      form.action = 'https://formsubmit.co/teixeiralucas793@outlook.com';
       form.target = '_blank'; // Abre a tela do FormSubmit em uma nova aba
 
       // Configura os campos que vão no e-mail
@@ -129,6 +130,17 @@ export default function Home() {
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const handleDownloadCv = () => {
+    const { href, filename } = CV_FILES[lang];
+    const link = document.createElement('a');
+    link.href = href;
+    link.download = filename;
+    link.rel = 'noopener';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const flatJobs = data.jobs?.flatMap(job =>
@@ -168,7 +180,10 @@ export default function Home() {
             <button onClick={() => setLang(lang === 'pt' ? 'en' : 'pt')} className="p-2 border rounded-md hover:bg-slate-50 text-slate-500 transition-colors">
               <Globe size={18} />
             </button>
-            <Button className="bg-violet-600 hover:bg-violet-700 text-white rounded-full px-6 text-sm font-medium">
+            <Button
+              onClick={handleDownloadCv}
+              className="bg-violet-600 hover:bg-violet-700 text-white rounded-full px-6 text-sm font-medium"
+            >
               <Download size={14} className="mr-2" />
               {lang === 'pt' ? 'Baixar CV' : 'Download CV'}
             </Button>
@@ -187,7 +202,7 @@ export default function Home() {
             className="max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col md:flex-row items-start gap-12 lg:gap-20 justify-between"
           >
             <div className="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 relative rounded-full border-4 border-white shadow-2xl overflow-hidden shrink-0">
-              <Image src="/me.jpg" alt={data.name} fill className="object-cover" priority />
+              <Image src="/me.png" alt={data.name} fill className="object-cover" priority />
             </div>
 
             <div className="flex-1 space-y-6 text-left pt-2">
@@ -522,7 +537,7 @@ export default function Home() {
                     <h4 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">{lang === 'pt' ? 'Informações de Contato' : 'Contact Information'}</h4>
                     <div className="flex items-center gap-3 text-slate-600 mb-3">
                       <Mail size={18} className="text-violet-600" />
-                      <span className="text-sm font-medium">teixeiralucas793@gmail.com</span>
+                      <span className="text-sm font-medium">teixeiralucas793@outlook.com</span>
                     </div>
                   </div>
 
@@ -550,7 +565,7 @@ export default function Home() {
       <footer className="w-full bg-white border-t border-slate-100 py-10">
         <div className="max-w-[1400px] mx-auto px-6 text-center">
           <p className="text-slate-400 text-sm font-medium">
-            © {new Date().getFullYear()} {data.name} — {lang === 'pt' ? 'Desenvolvido com Next.js, Tailwind e Shadcn UI.' : 'Built with Next.js, Tailwind & Shadcn UI.'}
+            © {new Date().getFullYear()} {data.name}
           </p>
         </div>
       </footer>

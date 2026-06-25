@@ -2,13 +2,6 @@ export const en = {
   name: 'Lucas Menezes Teixeira',
   title: 'Bachelor of Computer Science',
   description:'Currently working as a Back-end Developer at Banco Safra S.A. Passionate about technology, I am looking for challenges that broaden my expertise in systems architecture and scalable solutions.',
-  facts: {
-    'Residence': '<a href="https://www.google.com/maps/place/Ribeir%C3%A3o+Pires,+SP/@-23.6937547,-46.4785759,12z/data=!3m1!4b1!4m6!3m5!1s0x94ce6d00aafd1e81:0xc51dec6c655d6878!8m2!3d-23.7116426!4d-46.4123086!16zL20vMGc3amQ2"><i class="fa fa-home fact-icon"></i>Ribeirão Pires - SP</a>',
-    'WhatsApp': `<a href="https://wa.me/5511943791429?text=Hi%20Lucas%2C%20I%20saw%20your%20resume%20and%20would%20like%20to%20know%20if%20you%20are%20open%20to%20new%20professional%20opportunities.%20If%20so%2C%20could%20we%20schedule%20a%20conversation%3F"><i class="fa-brands fa-whatsapp  fact-icon"></i>+55 (11) 94379-1429</a>`,
-    'GitHub': `<a href="https://github.com/LucasTeixeira793"><i class="fa-brands fa-github fact-icon"></i>LucasTeixeira793</a>`,
-    'LinkedIn': `<a href="https://www.linkedin.com/in/lucas-menezes-teixeira-79b7a51a2/"><i class="fa-brands fa-linkedin fact-icon"></i>Lucas Menezes Teixeira</a>`,
-    'Email': '<a href="mailto:teixeiralucas793@outlook.com"><i class="fa fa-envelope fact-icon"></i>teixeiralucas793@outlook.com</a>'
-  },
   skills: [
     ['English', 75],
     ['.NET', 100],
@@ -49,40 +42,6 @@ export const en = {
       contents: "Responsible for controlling and responding to calls from the IT area supporting the financial sector, specializing in resolving IT calls related to the Consignment product, developing and maintaining applications and procedures, creating automations to optimize daily processes by evaluating team results through Power BI."
     }
   ],
-  experience: [
-    {
-      header: 'Capstone Project: jan/24 - dec/24',
-      link: 'https://doi.org/10.5281/zenodo.15670699',
-      contents: 'Development of predictive models for the Brazilian stock market using Machine Learning and Deep Learning techniques (ARIMA, Random Forest, and LSTM). Collected and processed historical data using the yfinance library, applied seasonal decomposition, and analyzed model performance across multiple financial assets (VALE3, PETR4, ITUB3).'
-    },
-    {
-      header: 'Kallistra: jan/23 - dec/23',
-      link: '',
-      contents: 'Developed data generators simulating IoT devices, with data transmission to Azure and storage on AWS (multi-cloud environment). Implemented a basic Machine Learning model for user behavior pattern recognition.'
-    },
-    {
-      header: 'Iara: jan/22 - dec/22',
-      link: 'https://github.com/LucasTeixeira793/iara-backend',
-      contents: 'Led the complete development of a backend application using Java SpringBoot. Provisioned AWS infrastructure and set up CI/CD pipelines using Jenkins. The project was a platform for finding and hiring nearby beauty professionals.'
-    }
-  ],
-  experienceScreen: [
-    {
-      header: 'SafeLog: jul/21 - dec/21',
-      link: 'https://github.com/nikolas-virionis/Safelog',
-      contents: `Developed a web platform with Node.js to monitor server CPU, disk, and RAM usage. Created a Java-based executable to collect monitoring data stored in a SQL Server database hosted in Azure.`
-    },
-    {
-      header: 'StrongBerry: jan/21 - jun/21',
-      link: '',
-      contents: `Created a monitoring solution for strawberry greenhouses, optimizing production by controlling temperature and humidity. Built using Node.js and MySQL Database.`
-    },
-    {
-      header: 'Semstress ABC: mar/19 - dec/20',
-      link: '',
-      contents: `Developed a web platform to help users find seamstresses and local sellers, offering more affordable products and promoting local businesses. Technologies used: Bootstrap, PHP, and MySQL.`
-    }
-  ],
   education: [
     {
       title: 'São Paulo Tech School - SPTech',
@@ -116,41 +75,43 @@ export const en = {
 
   projects: [
     {
-      title: "TCC",
-      period: "Jan/24 - Dec/24",
-      contents: "During my time at Wizard, I comprehensively and dynamically improved my language skills. Every semester, I had the opportunity to give lectures in English on various topics, which allowed me to strengthen my fluency, gain confidence in oral communication, and expand my knowledge in different areas.",
-      techs: ["React", "Node.js"],
-      link: "https://github.com/your-username/tcc"
+      title: 'TCC',
+      period: 'Jan/24 - Dec/24',
+      contents: 'Development of predictive models for the Brazilian stock market using Machine Learning and Deep Learning techniques (ARIMA, Random Forest, and LSTM). Collected and processed historical data using the yfinance library, applied seasonal decomposition, and analyzed model performance across multiple financial assets (VALE3, PETR4, ITUB3).',
+      techs: ['Python', 'Machine Learning', 'LSTM'],
+      link: 'https://doi.org/10.5281/zenodo.15670699'
     },
     {
-      title: "Kallistra",
-      period: "Jan/23 - Dec/23",
-      contents: "During my time at Wizard, I comprehensively and dynamically improved my language skills. Every semester, I had the opportunity to give lectures in English on various topics, which allowed me to strengthen my fluency, gain confidence in oral communication, and expand my knowledge in different areas.",
-      techs: [".NET", "SQL Server"]
+      title: 'Kallistra',
+      period: 'Jan/23 - Dec/23',
+      contents: 'Developed data generators simulating IoT devices, with data transmission to Azure and storage on AWS (multi-cloud environment). Implemented a basic Machine Learning model for user behavior pattern recognition.',
+      techs: ['Azure', 'AWS', 'IoT', 'Machine Learning']
     },
     {
-      title: "Iara",
-      period: "Jan/22 - Dec/22",
-      contents: "During my time at Wizard, I comprehensively and dynamically improved my language skills. Every semester, I had the opportunity to give lectures in English on various topics, which allowed me to strengthen my fluency, gain confidence in oral communication, and expand my knowledge in different areas.",
-      techs: ["Python", "Machine Learning"]
+      title: 'Iara',
+      period: 'Jan/22 - Dec/22',
+      contents: 'Led the complete development of a backend application using Java SpringBoot. Provisioned AWS infrastructure and set up CI/CD pipelines using Jenkins. The project was a platform for finding and hiring nearby beauty professionals.',
+      techs: ['Java', 'Spring Boot', 'AWS', 'Jenkins'],
+      link: 'https://github.com/LucasTeixeira793/iara-backend'
     },
     {
-      title: "SafeLog",
-      period: "Jan/22 - Dec/22",
-      contents: "During my time at Wizard, I comprehensively and dynamically improved my language skills. Every semester, I had the opportunity to give lectures in English on various topics, which allowed me to strengthen my fluency, gain confidence in oral communication, and expand my knowledge in different areas.",
-      techs: ["Java", "RabbitMQ"]
+      title: 'SafeLog',
+      period: 'Jul/21 - Dec/21',
+      contents: 'Developed a web platform with Node.js to monitor server CPU, disk, and RAM usage. Created a Java-based executable to collect monitoring data stored in a SQL Server database hosted in Azure.',
+      techs: ['Node.js', 'Java', 'SQL Server', 'Azure'],
+      link: 'https://github.com/nikolas-virionis/Safelog'
     },
     {
-      title: "StrongBerry",
-      period: "Jan/21 - Jun/21",
-      contents: "During my time at Wizard, I comprehensively and dynamically improved my language skills. Every semester, I had the opportunity to give lectures in English on various topics, which allowed me to strengthen my fluency, gain confidence in oral communication, and expand my knowledge in different areas.",
-      techs: ["JavaScript", "HTML/CSS"]
+      title: 'StrongBerry',
+      period: 'Jan/21 - Jun/21',
+      contents: 'Created a monitoring solution for strawberry greenhouses, optimizing production by controlling temperature and humidity. Built using Node.js and MySQL Database.',
+      techs: ['Node.js', 'MySQL']
     },
     {
-      title: "Semstress ABC",
-      period: "Mar/19 - Dec/20",
-      contents: "During my time at Wizard, I comprehensively and dynamically improved my language skills. Every semester, I had the opportunity to give lectures in English on various topics, which allowed me to strengthen my fluency, gain confidence in oral communication, and expand my knowledge in different areas.",
-      techs: ["PHP", "MySQL"]
+      title: 'Semstress ABC',
+      period: 'Mar/19 - Dec/20',
+      contents: 'Developed a web platform to help users find seamstresses and local sellers, offering more affordable products and promoting local businesses. Technologies used: Bootstrap, PHP, and MySQL.',
+      techs: ['Bootstrap', 'PHP', 'MySQL']
     }
   ]
 };

@@ -2,13 +2,6 @@ export const ptBR = {
   name: 'Lucas Menezes Teixeira',
   title: 'Bacharel em Ciência da Computação',
   description:'Atualmente atuando como desenvolvedor Back-end no Banco Safra SA. Apaixonado por tecnologia, busco desafios que ampliem minhas habilidades em arquitetura de sistemas e soluções escaláveis.',
-  facts: {
-    'Residência': '<a href="https://www.google.com/maps/place/Ribeir%C3%A3o+Pires,+SP/@-23.6937547,-46.4785759,12z/data=!3m1!4b1!4m6!3m5!1s0x94ce6d00aafd1e81:0xc51dec6c655d6878!8m2!3d-23.7116426!4d-46.4123086!16zL20vMGc3amQ2"><i class="fa fa-home fact-icon"></i>Ribeirão Pires - SP</a>',
-    'WhatsApp': `<a href="https://wa.me/5511943791429?text=Ol%C3%A1+Lucas%2C+vi+seu+curr%C3%ADculo+e+gostaria+de+saber+se+voc%C3%AA+est%C3%A1+aberto+a+novas+oportunidades+profissionais.+Se+sim%2C+poder%C3%ADamos+marcar+uma+conversa%3F"><i class="fa-brands fa-whatsapp  fact-icon"></i>+55 (11) 94379-1429</a>`,
-    'GitHub': `<a href="https://github.com/LucasTeixeira793"><i class="fa-brands fa-github fact-icon"></i>LucasTeixeira793</a>`,
-    'LinkedIn': `<a href="https://www.linkedin.com/in/lucas-menezes-teixeira-79b7a51a2/"><i class="fa-brands fa-linkedin fact-icon"></i>Lucas Menezes Teixeira</a>`,
-    'Email': '<a href="mailto:teixeiralucas793@outlook.com"><i class="fa fa-envelope fact-icon"></i>teixeiralucas793@outlook.com</a>'
-  },
   skills: [
     ['Inglês', 75],
     ['.NET', 100],
@@ -27,7 +20,7 @@ export const ptBR = {
     {
       positions: [
         {
-          title: 'Banco Safra SA - Analista Pl.',
+          title: 'Banco Safra SA - Analista Pleno.',
           period: 'Mai/25 - Atual'
         },
         {
@@ -79,77 +72,45 @@ export const ptBR = {
       ]
     }
   ],
-  experience: [
-    {
-      header: 'TCC: jan/24 - dez/24',
-      link: 'https://doi.org/10.5281/zenodo.15670699',
-      contents: 'Desenvolvimento de modelos preditivos para o mercado de ações brasileiro utilizando técnicas de Machine Learning e Deep Learning, como ARIMA, Random Forest e LSTM. O projeto envolveu coleta e tratamento de dados históricos com a biblioteca yfinance, aplicação de decomposição sazonal e análise de desempenho dos modelos em múltiplos ativos financeiros (VALE3, PETR4 e ITUB3).'
-    },
-    {
-      header: 'Kallistra: jan/23 - dez/23',
-      link: '',
-      contents: 'Eu e minha equipe desenvolvemos geradores de dados simulando um dispositivo IoT. Os dados gerados são enviados para a Azure, processados e armazenados na AWS (Experiência me multi-cloud) Juntamente com a implementação de uma Machine Learning simples para reconhecimento de padrões de usuários.'
-    },
-    {
-      header: 'Iara: jan/22 - dez/22',
-      link: 'https://github.com/LucasTeixeira793/iara-backend',
-      contents: 'Atuei como líder de projeto e fui responsável pelo desenvolvimento completo do Backend em Java SpringBoot. Além disso, realizei o provisionamento da aplicação na AWS e implementei o CI/CD utilizando Jenkins. O projeto consistia em uma plataforma de busca e contratação de profissionais de beleza próximos aos usuários.'
-    }
-  ],
-  experienceScreen: [
-    {
-      header: 'SafeLog: jul/21 - dez/21',
-      link: 'https://github.com/nikolas-virionis/Safelog',
-      contents: `Desenvolvi uma plataforma web utilizando Node.js para monitorar CPU, disco e RAM de servidores. Implementei um executável em Java para coletar os dados de monitoramento, que foram armazenados em um banco de dados SQL Server alocado na Azure.`
-    },
-    {
-      header: 'StrongBerry: jan/21 - jun/21',
-      link: '',
-      contents: `criei uma solução para calcular a produção de estufas de morangos. Propus medidas para aumentar a produção, como o controle de temperatura e umidade. O projeto visava otimizar a produção por meio do monitoramento e controle desses fatores-chave. Projeto criado em Node.js e Banco de Dados MySQL`
-    },
-    {
-      header: 'Semstress ABC: mar/19 - dez/20',
-      link: '',
-      contents: `No projeto SemStress, feito como meu TCC do Ensino Médio, criei uma plataforma web que visa facilitar a busca por costureiras e bazares próximos, oferecendo produtos mais acessíveis e promovendo o reconhecimento de vendedores locais. A plataforma foi desenvolvida utilizando Bootstrap, PHP e MySQL.`
-    }
-  ],
   projects: [
     {
-      title: "TCC",
-      period: "jan/24 - dez/24",
-      contents: "Durante meu período na Wizard, aprimorei minhas habilidades no idioma de forma abrangente e dinâmica. A cada semestre, tive a oportunidade de dar palestras em inglês sobre diversos temas, o que me permitiu fortalecer minha fluência, ganhar confiança na comunicação oral e expandir meu conhecimento em diferentes áreas.",
-      techs: ["React", "Node.js"], // Pode alterar as tecnologias
-      link: "https://github.com/seu-usuario/tcc" // Link do repositório
+      title: 'TCC',
+      period: 'jan/24 - dez/24',
+      contents: 'Desenvolvimento de modelos preditivos para o mercado de ações brasileiro utilizando técnicas de Machine Learning e Deep Learning, como ARIMA, Random Forest e LSTM. O projeto envolveu coleta e tratamento de dados históricos com a biblioteca yfinance, aplicação de decomposição sazonal e análise de desempenho dos modelos em múltiplos ativos financeiros (VALE3, PETR4 e ITUB3).',
+      techs: ['Python', 'Machine Learning', 'LSTM'],
+      link: 'https://doi.org/10.5281/zenodo.15670699'
     },
     {
-      title: "Kallistra",
-      period: "jan/23 - dez/23",
-      contents: "Durante meu período na Wizard, aprimorei minhas habilidades no idioma de forma abrangente e dinâmica. A cada semestre, tive a oportunidade de dar palestras em inglês sobre diversos temas, o que me permitiu fortalecer minha fluência, ganhar confiança na comunicação oral e expandir meu conhecimento em diferentes áreas.",
-      techs: [".NET", "SQL Server"]
+      title: 'Kallistra',
+      period: 'jan/23 - dez/23',
+      contents: 'Eu e minha equipe desenvolvemos geradores de dados simulando um dispositivo IoT. Os dados gerados são enviados para a Azure, processados e armazenados na AWS (Experiência me multi-cloud) Juntamente com a implementação de uma Machine Learning simples para reconhecimento de padrões de usuários.',
+      techs: ['Azure', 'AWS', 'IoT', 'Machine Learning']
     },
     {
-      title: "Iara",
-      period: "jan/22 - dez/22",
-      contents: "Durante meu período na Wizard, aprimorei minhas habilidades no idioma de forma abrangente e dinâmica. A cada semestre, tive a oportunidade de dar palestras em inglês sobre diversos temas, o que me permitiu fortalecer minha fluência, ganhar confiança na comunicação oral e expandir meu conhecimento em diferentes áreas.",
-      techs: ["Python", "Machine Learning"]
+      title: 'Iara',
+      period: 'jan/22 - dez/22',
+      contents: 'Atuei como líder de projeto e fui responsável pelo desenvolvimento completo do Backend em Java SpringBoot. Além disso, realizei o provisionamento da aplicação na AWS e implementei o CI/CD utilizando Jenkins. O projeto consistia em uma plataforma de busca e contratação de profissionais de beleza próximos aos usuários.',
+      techs: ['Java', 'Spring Boot', 'AWS', 'Jenkins'],
+      link: 'https://github.com/LucasTeixeira793/iara-backend'
     },
     {
-      title: "SafeLog",
-      period: "jan/22 - dez/22",
-      contents: "Durante meu período na Wizard, aprimorei minhas habilidades no idioma de forma abrangente e dinâmica. A cada semestre, tive a oportunidade de dar palestras em inglês sobre diversos temas, o que me permitiu fortalecer minha fluência, ganhar confiança na comunicação oral e expandir meu conhecimento em diferentes áreas.",
-      techs: ["Java", "RabbitMQ"]
+      title: 'SafeLog',
+      period: 'jul/21 - dez/21',
+      contents: 'Desenvolvi uma plataforma web utilizando Node.js para monitorar CPU, disco e RAM de servidores. Implementei um executável em Java para coletar os dados de monitoramento, que foram armazenados em um banco de dados SQL Server alocado na Azure.',
+      techs: ['Node.js', 'Java', 'SQL Server', 'Azure'],
+      link: 'https://github.com/nikolas-virionis/Safelog'
     },
     {
-      title: "StrongBerry",
-      period: "jan/21 - jun/21",
-      contents: "Durante meu período na Wizard, aprimorei minhas habilidades no idioma de forma abrangente e dinâmica. A cada semestre, tive a oportunidade de dar palestras em inglês sobre diversos temas, o que me permitiu fortalecer minha fluência, ganhar confiança na comunicação oral e expandir meu conhecimento em diferentes áreas.",
-      techs: ["JavaScript", "HTML/CSS"]
+      title: 'StrongBerry',
+      period: 'jan/21 - jun/21',
+      contents: 'Criei uma solução para calcular a produção de estufas de morangos. Propus medidas para aumentar a produção, como o controle de temperatura e umidade. O projeto visava otimizar a produção por meio do monitoramento e controle desses fatores-chave. Projeto criado em Node.js e Banco de Dados MySQL.',
+      techs: ['Node.js', 'MySQL']
     },
     {
-      title: "Semstress ABC",
-      period: "mar/19 - dez/20",
-      contents: "Durante meu período na Wizard, aprimorei minhas habilidades no idioma de forma abrangente e dinâmica. A cada semestre, tive a oportunidade de dar palestras em inglês sobre diversos temas, o que me permitiu fortalecer minha fluência, ganhar confiança na comunicação oral e expandir meu conhecimento em diferentes áreas.",
-      techs: ["PHP", "MySQL"]
+      title: 'Semstress ABC',
+      period: 'mar/19 - dez/20',
+      contents: 'No projeto SemStress, feito como meu TCC do Ensino Médio, criei uma plataforma web que visa facilitar a busca por costureiras e bazares próximos, oferecendo produtos mais acessíveis e promovendo o reconhecimento de vendedores locais. A plataforma foi desenvolvida utilizando Bootstrap, PHP e MySQL.',
+      techs: ['Bootstrap', 'PHP', 'MySQL']
     }
   ]
 };
