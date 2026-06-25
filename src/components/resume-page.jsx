@@ -191,7 +191,8 @@ export function ResumePage({ lang }) {
       <header className="sticky top-0 z-50 w-full border-b bg-white/60 backdrop-blur-md shadow-sm">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 h-16 flex items-center justify-between">
           <span className="font-semibold text-lg text-slate-900 tracking-tight italic">
-            {data.name}
+            <span className="lg:hidden">{data.name.split(' ')[0]}</span>
+            <span className="hidden lg:inline">{data.name}</span>
           </span>
 
           <nav className="hidden lg:flex items-center gap-8">
@@ -212,7 +213,7 @@ export function ResumePage({ lang }) {
               type="button"
               onClick={handleToggleLang}
               aria-label={getLangToggleLabel(lang)}
-              className="group relative p-2 border rounded-md hover:bg-slate-50 hover:border-violet-300 text-slate-500 hover:text-violet-600 transition-colors"
+              className="group relative p-2 border rounded-md hover:bg-slate-50 hover:border-violet-300 text-slate-500 hover:text-violet-600 transition-colors cursor-pointer"
             >
               <Globe size={18} />
               <span
@@ -245,7 +246,7 @@ export function ResumePage({ lang }) {
             transition={{ duration: 0.6 }}
             className="max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col md:flex-row items-start gap-12 lg:gap-20 justify-between"
           >
-            <div className="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 relative rounded-full border-4 border-white shadow-2xl overflow-hidden shrink-0">
+            <div className="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 relative rounded-full border-4 border-white shadow-2xl overflow-hidden shrink-0 mx-auto md:mx-0">
               <Image src="/me.png" alt={data.name} fill className="object-cover" priority />
             </div>
 
@@ -296,7 +297,7 @@ export function ResumePage({ lang }) {
                 hidden: { opacity: 0 },
                 show: { opacity: 1, transition: { staggerChildren: 0.05 } }
               }}
-              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
+              className="flex flex-wrap justify-center gap-4"
             >
               {data.skills?.map((skillItem, index) => {
                 const style = getSkillStyle(skillItem[0]);
@@ -306,7 +307,7 @@ export function ResumePage({ lang }) {
                   <motion.div
                     key={index}
                     variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
-                    whileHover={{ scale: 1.02 }}
+                    className="w-full sm:w-[calc((100%-1rem)/2)] md:w-[calc((100%-2rem)/3)] lg:w-[calc((100%-3rem)/4)] xl:w-[calc((100%-4rem)/5)]"
                   >
                     <Card className="border-slate-100 bg-slate-50/50 shadow-sm hover:shadow-md transition-all duration-300 h-full">
                       <CardContent className="p-4 flex items-center gap-4">
@@ -501,7 +502,7 @@ export function ResumePage({ lang }) {
                         </div>
                         <p className="text-slate-500 text-[0.95rem] leading-relaxed mb-8 flex-1 line-clamp-4">{project.contents}</p>
                         <div className="border-t border-slate-100 pt-5 flex justify-end">
-                          <button onClick={() => setSelectedProject(project)} className="text-violet-600 text-[0.8rem] font-bold flex items-center gap-1 hover:text-violet-800 transition-colors group tracking-wide uppercase">
+                          <button onClick={() => setSelectedProject(project)} className="text-violet-600 text-[0.8rem] font-bold flex items-center gap-1 hover:text-violet-800 transition-colors group tracking-wide uppercase cursor-pointer">
                             {lang === 'pt' ? 'Mais detalhes' : 'More details'} 
                             <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
                           </button>
@@ -542,7 +543,7 @@ export function ResumePage({ lang }) {
                       <p className="text-violet-500 text-sm font-medium uppercase tracking-wider">{selectedProject.period || 'jan/24 - dez/24'}</p>
                     </div>
                   </div>
-                  <button onClick={() => setSelectedProject(null)} className="p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-full transition-colors">
+                  <button onClick={() => setSelectedProject(null)} className="p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-full transition-colors cursor-pointer">
                     <X size={20} />
                   </button>
                 </div>
@@ -593,7 +594,7 @@ export function ResumePage({ lang }) {
                     <h3 className="font-bold text-slate-900 text-2xl mb-2">{lang === 'pt' ? 'Envie uma mensagem' : 'Send a message'}</h3>
                     <p className="text-slate-500 text-sm">{lang === 'pt' ? 'Preencha os dados e a mensagem será enviada direto para mim.' : 'Fill out the details and the message will be sent directly to me.'}</p>
                   </div>
-                  <button onClick={() => setIsContactModalOpen(false)} className="md:hidden p-2 text-slate-400 hover:text-slate-700 bg-slate-50 rounded-full"><X size={20} /></button>
+                  <button onClick={() => setIsContactModalOpen(false)} className="md:hidden p-2 text-slate-400 hover:text-slate-700 bg-slate-50 rounded-full cursor-pointer"><X size={20} /></button>
                 </div>
 
                 <form onSubmit={handleSendMessage} className="space-y-5 flex-1">
@@ -621,7 +622,7 @@ export function ResumePage({ lang }) {
               </div>
 
               <div className="w-full md:w-2/5 bg-slate-50 p-6 sm:p-8 md:p-10 border-t md:border-t-0 md:border-l border-slate-100 flex flex-col relative md:overflow-y-auto md:min-h-0 shrink-0">
-                <button onClick={() => setIsContactModalOpen(false)} className="hidden md:flex absolute top-6 right-6 p-2 text-slate-400 hover:text-slate-700 hover:bg-white rounded-full transition-colors shadow-sm border border-transparent hover:border-slate-200"><X size={20} /></button>
+                <button onClick={() => setIsContactModalOpen(false)} className="hidden md:flex absolute top-6 right-6 p-2 text-slate-400 hover:text-slate-700 hover:bg-white rounded-full transition-colors shadow-sm border border-transparent hover:border-slate-200 cursor-pointer"><X size={20} /></button>
 
                 <div className="space-y-8 md:mt-12">
                   <div>
