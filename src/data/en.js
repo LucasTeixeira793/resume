@@ -7,7 +7,7 @@ export const en = {
     ['.NET', 100],
     ['RabbitMQ', 100],
     ['SQL', 100],
-    ['NoSQL', 100],
+    ['MongoDB', 100],
     ['Data Structures', 70],
     ['Cloud', 75],
     ['Agile', 100],

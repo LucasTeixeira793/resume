@@ -54,7 +54,7 @@ const getSkillStyle = (skillName) => {
     '.NET': { icon: Code, color: 'bg-pink-500', cat: 'Backend' },
     'RabbitMQ': { icon: Layers, color: 'bg-orange-500', cat: 'Mensageria' },
     'SQL': { icon: Database, color: 'bg-blue-500', cat: 'Database' },
-    'NoSQL': { icon: Database, color: 'bg-emerald-500', cat: 'Database' },
+    'MongoDB': { icon: Database, color: 'bg-emerald-500', cat: 'Database' },
     'Estrutura de dados': { icon: GitMerge, color: 'bg-violet-600', cat: 'Fundamentos' },
     'Data Structures': { icon: GitMerge, color: 'bg-violet-600', cat: 'Fundamentals' },
     'Cloud': { icon: Cloud, color: 'bg-blue-400', cat: 'Infrastructure' },
@@ -316,7 +316,7 @@ export function ResumePage({ lang }) {
                         </div>
                         <div className="text-left flex-1">
                           <h3 className="font-bold text-slate-900 text-sm leading-tight">{skillItem[0]}</h3>
-                          <p className="text-[10px] uppercase tracking-wider text-slate-400 font-bold mt-0.5">{style.cat}</p>
+                          {/* <p className="text-[10px] uppercase tracking-wider text-slate-400 font-bold mt-0.5">{style.cat}</p> */}
                         </div>
                       </CardContent>
                     </Card>

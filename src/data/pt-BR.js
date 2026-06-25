@@ -7,7 +7,7 @@ export const ptBR = {
     ['.NET', 100],
     ['RabbitMQ', 100],
     ['SQL', 100],
-    ['NoSQL', 100],
+    ['MongoDB', 100],
     ['Estrutura de dados', 70],
     ['Cloud', 75],
     ['Ágil', 100],
