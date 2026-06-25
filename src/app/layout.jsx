@@ -9,7 +9,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: 'Lucas Menezes - Resume',
+  title: 'Lucas Teixeira - Resume',
   description: 'Portfolio and resume of Lucas Menezes Teixeira, Back-end Developer.',
 };
 

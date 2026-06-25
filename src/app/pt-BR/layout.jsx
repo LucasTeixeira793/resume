@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Lucas Menezes - Currículo',
+  title: 'Lucas Teixeira - Currículo',
   description: 'Portfólio e Currículo de Lucas Menezes Teixeira, Desenvolvedor Back-end.',
 };
 
