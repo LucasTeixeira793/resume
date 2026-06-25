@@ -1,7 +1,7 @@
 export const en = {
   name: 'Lucas Menezes Teixeira',
   title: 'Bachelor of Computer Science',
-  description:'Currently working as a Back-end Developer at Banco Safra S.A. Passionate about technology, I am looking for challenges that broaden my expertise in systems architecture and scalable solutions.',
+  description:'Mid-level Software Engineer focused on back-end development, with solid experience in distributed systems and event-driven architecture. I work at Banco Safra building large-scale credit solutions, with a strong emphasis on performance, scalability, and operational efficiency.',
   skills: [
     ['English', 75],
     ['.NET', 100],
@@ -18,29 +18,37 @@ export const en = {
   ],
   jobs: [
     {
-      positions: [
-        {
-          title: 'Banco Safra SA - Mid-Level System Analyst',
-          period: 'May/25 - Present',
-        },
-        {
-          title: 'Banco Safra SA - Jr. System Analyst',
-          period: 'Jun/23 - May/25',
-        }
+      company: 'Banco Safra SA',
+      role: 'Software Engineer - Mid-Level',
+      period: 'May 2025 - Present',
+      isCurrent: true,
+      highlights: [
+        'Led the design and development of a Private Payroll-Deductible Loan origination system, handling ~1 million loan requests at launch, using resilient and scalable architecture.',
+        'Enhanced post-sale workflows for the payroll loan product, reducing operational friction and improving customer experience, through continuous refinement of business rules and integrations.',
+        'Implemented an AI-powered agent specialized in the payroll loan product, improving demand planning accuracy for tech and business teams, integrated with internal chat tools.'
       ],
-      skills: ['.NET', 'PL/SQL', 'RabbitMQ', 'MongoDB', 'Kafka', 'Cloud', 'CI/CD', 'Monitoring'],
-      contents: "Full Stack Developer involved in designing new features and solving systemic issues for the Payroll Loan product. Experienced in API integration using .NET and procedure development with PL/SQL. Skilled in implementing continuous integration and delivery (CI/CD) through tools such as Jenkins and GitLab CI, depending on project needs. Strong communication skills have been critical to fostering effective team collaboration and delivering high-quality solutions."
+      skills: ['.NET / C#', 'Microservices', 'RabbitMQ', 'Redis', 'MongoDB', 'Integration services'],
     },
     {
-      positions:[
-        {
-          title: 'Banco Safra SA - Intern',
-          period: 'jan/22 - Jun/23',
-        }
+      company: 'Banco Safra SA',
+      role: 'Software Engineer - Junior',
+      period: 'August 2023 - May 2025',
+      highlights: [
+        'Redesigned the Portability and Refinancing flow, reducing loan disbursement time from ~7 days to sameday funding, by optimizing process flows and integrations.',
+        'Refactored the loan origination pipeline, reducing stage transition time from minutes to seconds, by replacing batch processing with an event-driven architecture using RabbitMQ.'
       ],
-      skills: ['PL/SQL', '.NET', 'Communication', 'Office 365', 'Git'],
-      contents: "Responsible for controlling and responding to calls from the IT area supporting the financial sector, specializing in resolving IT calls related to the Consignment product, developing and maintaining applications and procedures, creating automations to optimize daily processes by evaluating team results through Power BI."
-    }
+      skills: ['.NET / C#', 'Distributed Systems', 'APIs', 'PL/SQL', 'RabbitMQ', 'Event-driven architecture', 'Microservices'],
+    },
+    {
+      company: 'Banco Safra SA',
+      role: 'System Analyst - Intern',
+      period: 'January 2022 - August 2023',
+        highlights: [
+          'Developed a real-time monitoring dashboard, increasing system observability and operational visibility, using Angular for tracking critical processes.',
+          'Automated ticket triage and assignment, eliminating manual workload and improving operational efficiency, by developing a bot integrated with the governance platform.'
+      ],
+      skills: ['.NET / C#', 'Automation scripts', 'Angular', 'TypeScript', 'REST APIs'],
+    },
   ],
   education: [
     {
@@ -75,42 +83,55 @@ export const en = {
 
   projects: [
     {
-      title: 'TCC',
-      period: 'Jan/24 - Dec/24',
-      contents: 'Development of predictive models for the Brazilian stock market using Machine Learning and Deep Learning techniques (ARIMA, Random Forest, and LSTM). Collected and processed historical data using the yfinance library, applied seasonal decomposition, and analyzed model performance across multiple financial assets (VALE3, PETR4, ITUB3).',
-      techs: ['Python', 'Machine Learning', 'LSTM'],
+      title: 'ERP - CRM Integration Platform',
+      period: '2025 - 2026',
+      contents: 'Development of a bidirectional integration between the EPS ERP system and RD Station CRM, automating the synchronization of commercial and customer data.',
+      details:  'This project aimed to connect the EPS ERP system and RD Station CRM through a bidirectional integration, ensuring that customer information, sales opportunities, and business processes were automatically synchronized across both platforms. The solution eliminated manual data updates, reduced information inconsistencies, and improved operational efficiency for sales and customer relationship teams.',
+      techs: ['SQL Server', '.NET', 'Clean Architecture', 'Quartz', 'Webhooks', 'Polly', 'Refit']
+    },
+    {
+      title: 'Capstone Project',
+      period: '2024',
+      contents: 'Research and development of Machine Learning and Deep Learning models for stock price forecasting using seasonal decomposition and time series analysis.',
+      details: 'Bachelor\'s thesis focused on forecasting assets in the Brazilian stock market through Artificial Intelligence techniques. Historical stock prices and economic indicators were collected and processed to train predictive models, including LSTM and SVR. The study explored seasonal decomposition of time series to separate trend, seasonality, and noise components, aiming to improve forecasting performance and result interpretability. Different approaches were evaluated and compared to assess their effectiveness in supporting financial market decision-making.',
+      techs: ['Python', 'Machine Learning', 'Deep Learning', 'LSTM', 'SVR'],
       link: 'https://doi.org/10.5281/zenodo.15670699'
     },
     {
       title: 'Kallistra',
-      period: 'Jan/23 - Dec/23',
-      contents: 'Developed data generators simulating IoT devices, with data transmission to Azure and storage on AWS (multi-cloud environment). Implemented a basic Machine Learning model for user behavior pattern recognition.',
+      period: '2023',
+      contents: 'IoT simulation platform featuring a multi-cloud architecture for data ingestion, processing, and intelligent analytics.',
+      details:  'A project designed to simulate real-time IoT device behavior through custom data generators. Generated events are sent to Azure services for processing and then stored on AWS infrastructure, providing hands-on experience with multi-cloud architectures and data pipelines. In addition, a Machine Learning model was implemented to identify user behavior patterns, enabling data-driven insights and basic predictive analysis.',
       techs: ['Azure', 'AWS', 'IoT', 'Machine Learning']
     },
     {
       title: 'Iara',
-      period: 'Jan/22 - Dec/22',
-      contents: 'Led the complete development of a backend application using Java SpringBoot. Provisioned AWS infrastructure and set up CI/CD pipelines using Jenkins. The project was a platform for finding and hiring nearby beauty professionals.',
+      period: '2022',
+      contents: 'Web platform connecting consumers with beauty professionals, built with a scalable cloud architecture and continuous delivery pipeline.',
+      details: 'Served as project lead and was responsible for the complete backend development using Java Spring Boot. The platform was designed to help users discover, hire, and interact with beauty service providers located nearby. Beyond API development, I provisioned the cloud infrastructure on AWS and implemented CI/CD pipelines with Jenkins, automating deployments and improving development reliability. The frontend was developed with React, resulting in a modern, scalable solution designed for future growth.',
       techs: ['Java', 'Spring Boot', 'AWS', 'Jenkins'],
       link: 'https://github.com/LucasTeixeira793/iara-backend'
     },
     {
       title: 'SafeLog',
-      period: 'Jul/21 - Dec/21',
-      contents: 'Developed a web platform with Node.js to monitor server CPU, disk, and RAM usage. Created a Java-based executable to collect monitoring data stored in a SQL Server database hosted in Azure.',
+      period: '2021',
+      contents: 'Infrastructure monitoring platform for tracking server resources and generating automated alerts.',
+      details:  'SafeLog is a web-based solution designed to monitor critical infrastructure metrics, including CPU usage, memory consumption, and disk storage. The platform allows administrators to define custom thresholds and automatically trigger alerts when monitored values exceed configured limits. To collect server metrics, a Java-based agent was developed and distributed as an executable application, responsible for gathering and transmitting data to the central platform. The backend was built with Node.js, using SQL Server as the database and Azure as the hosting environment.',
       techs: ['Node.js', 'Java', 'SQL Server', 'Azure'],
       link: 'https://github.com/nikolas-virionis/Safelog'
     },
     {
       title: 'StrongBerry',
-      period: 'Jan/21 - Jun/21',
-      contents: 'Created a monitoring solution for strawberry greenhouses, optimizing production by controlling temperature and humidity. Built using Node.js and MySQL Database.',
+      period: '2021',
+      contents: 'Smart platform for greenhouse monitoring and strawberry yield estimation based on environmental data.',
+      details:  'StrongBerry was developed to help growers monitor and optimize strawberry production in controlled environments. The solution collects and displays temperature and humidity sensor data through a web dashboard, enabling real-time tracking of greenhouse conditions. The project was built using Node.js and MySQL, combining IoT concepts with data-driven agriculture.',
       techs: ['Node.js', 'MySQL']
     },
     {
       title: 'Semstress ABC',
-      period: 'Mar/19 - Dec/20',
-      contents: 'Developed a web platform to help users find seamstresses and local sellers, offering more affordable products and promoting local businesses. Technologies used: Bootstrap, PHP, and MySQL.',
+      period: '2019 - 2020',
+      contents: 'Web platform connecting consumers with local seamstresses and thrift stores, promoting affordable shopping and local businesses.',
+      details:  'SemStress ABC was developed to simplify the search for seamstresses, thrift stores, and small local businesses, helping connect consumers with nearby service providers and vendors. The platform promotes affordable products and services while increasing the visibility of local entrepreneurs. Built using PHP, MySQL, and Bootstrap, the solution delivers a simple, responsive, and user-friendly web experience.',
       techs: ['Bootstrap', 'PHP', 'MySQL']
     }
   ]

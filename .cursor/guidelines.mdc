@@ -48,7 +48,8 @@ public/             # me.png (foto do perfil)
 
 ### Navbar (sticky)
 - Nome do candidato, links de âncora com scroll suave (`#habilidades`, `#experiencia`, `#educacao`, `#projetos`).
-- Toggle de idioma PT ↔ EN (`useState('pt' | 'en')`).
+- Toggle de idioma PT ↔ EN navega entre `/` (inglês) e `/pt-BR` (português).
+- Rotas inexistentes redirecionam para a raiz do idioma atual (`/` ou `/pt-BR`) via `src/middleware.js`.
 - Botão **Baixar CV** baixa o PDF estático de `public/cv/` conforme idioma ativo. PDFs são mantidos manualmente — ver `src/lib/cv.js` para os caminhos.
 
 ### Hero (`#topo`)
@@ -61,10 +62,9 @@ public/             # me.png (foto do perfil)
 - Mapeamento visual em `getSkillStyle()` — **chaves devem corresponder ao nome da skill no idioma ativo** (ex.: `'Inglês'` em PT, `'English'` em EN).
 
 ### Experiência (`#experiencia`)
-- `data.jobs` é achatado em `flatJobs`: cada `position` vira um card.
-- Formato do título: `"Empresa - Cargo"` (split por `' - '`).
-- `contents` só aparece na última posição quando há múltiplas posições na mesma empresa.
-- Badge de período: destaque violeta se contém `"atual"` ou `"present"`.
+- Timeline à esquerda, cards à direita (mesmo padrão da educação, com faixa violeta lateral e bullets com ícone `Check`).
+- Cada item em `data.jobs`: `company`, `role`, `period`, `highlights[]` (bullets XYZ), `skills[]`, `isCurrent?`.
+- Badge de período em destaque violeta quando `isCurrent: true`; bolinha da timeline com `ring-violet-200`.
 
 ### Educação (`#educacao`)
 - Timeline alternada (zigzag) em desktop.
@@ -93,13 +93,13 @@ Conteúdo **sempre nos arquivos de dados**, não hardcoded no JSX (exceto links 
 {
   name, title, description,
   skills: [['Nome', nivel], ...],  // nivel não é exibido na UI atual
-  jobs: [{ positions: [{ title, period }], contents, skills }],
+  jobs: [{ company, role, period, highlights: [...], skills: [...], isCurrent? }],
   education: [{ title, contents, techs?, period?, type? }],
   projects: [{ title, period, contents, techs?, link? }]
 }
 ```
 
-**Regra de i18n**: qualquer alteração de conteúdo deve ser feita em **ambos** `pt-BR.js` e `en.js`. Chaves de idioma em `resumeData`: `pt` e `en`.
+**Regra de i18n**: qualquer alteração de conteúdo deve ser feita em **ambos** `pt-BR.js` e `en.js`. Rotas: `/` → inglês (`resumeData.en`), `/pt-BR` → português (`resumeData.pt`).
 
 ## Design system e estilos
 

@@ -9,13 +9,13 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: 'Lucas Menezes - Currículo',
-  description: 'Portfólio e Currículo de Lucas Menezes Teixeira, Desenvolvedor Back-end.',
+  title: 'Lucas Menezes - Resume',
+  description: 'Portfolio and resume of Lucas Menezes Teixeira, Back-end Developer.',
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pt-BR" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth">
       <body className={`${montserrat.variable} font-sans antialiased bg-slate-50`}>
         {children}
       </body>
