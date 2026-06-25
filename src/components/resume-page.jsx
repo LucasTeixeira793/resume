@@ -94,6 +94,17 @@ export function ResumePage({ lang }) {
     document.documentElement.lang = getHtmlLang(lang);
   }, [lang]);
 
+  useEffect(() => {
+    const isModalOpen = isContactModalOpen || selectedProject !== null;
+    if (!isModalOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [isContactModalOpen, selectedProject]);
+
   const handleToggleLang = () => {
     const hash = typeof window !== 'undefined' ? window.location.hash : '';
     router.push(`${LANG_ROUTES[getAlternateLang(lang)]}${hash}`);
@@ -573,10 +584,10 @@ export function ResumePage({ lang }) {
       <AnimatePresence>
         {isContactModalOpen && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute inset-0 bg-slate-900/50 backdrop-blur-sm" onClick={() => setIsContactModalOpen(false)} />
-            <motion.div initial={{ opacity: 0, scale: 0.95, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95, y: 20 }} className="relative w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden z-10 flex flex-col md:flex-row max-h-[95vh] md:max-h-[80vh]">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm" onClick={() => setIsContactModalOpen(false)} />
+            <motion.div initial={{ opacity: 0, scale: 0.95, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95, y: 20 }} className="relative w-full max-w-4xl max-h-[min(90dvh,calc(100vh-2rem))] bg-white rounded-2xl shadow-2xl z-10 flex flex-col md:flex-row overflow-y-auto md:overflow-hidden">
               
-              <div className="w-full md:w-3/5 p-8 md:p-10 flex flex-col bg-white overflow-y-auto">
+              <div className="w-full md:w-3/5 p-6 sm:p-8 md:p-10 flex flex-col bg-white md:overflow-y-auto md:min-h-0 shrink-0">
                 <div className="flex items-center justify-between mb-8">
                   <div>
                     <h3 className="font-bold text-slate-900 text-2xl mb-2">{lang === 'pt' ? 'Envie uma mensagem' : 'Send a message'}</h3>
@@ -609,10 +620,10 @@ export function ResumePage({ lang }) {
                 </form>
               </div>
 
-              <div className="w-full md:w-2/5 bg-slate-50 p-8 md:p-10 border-t md:border-t-0 md:border-l border-slate-100 flex flex-col relative">
+              <div className="w-full md:w-2/5 bg-slate-50 p-6 sm:p-8 md:p-10 border-t md:border-t-0 md:border-l border-slate-100 flex flex-col relative md:overflow-y-auto md:min-h-0 shrink-0">
                 <button onClick={() => setIsContactModalOpen(false)} className="hidden md:flex absolute top-6 right-6 p-2 text-slate-400 hover:text-slate-700 hover:bg-white rounded-full transition-colors shadow-sm border border-transparent hover:border-slate-200"><X size={20} /></button>
 
-                <div className="mt-8 md:mt-12 space-y-8">
+                <div className="space-y-8 md:mt-12">
                   <div>
                     <h4 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">{lang === 'pt' ? 'Informações de Contato' : 'Contact Information'}</h4>
                     <div className="space-y-3">
