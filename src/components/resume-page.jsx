@@ -49,21 +49,21 @@ const getWhatsappUrl = (lang) => {
 
 const getSkillStyle = (skillName) => {
   const styles = {
-    'Inglês': { icon: MessageCircle, color: 'bg-violet-500', cat: 'Comunicação' },
-    'English': { icon: MessageCircle, color: 'bg-violet-500', cat: 'Communication' },
+    'Inglês': { icon: MessageCircle, color: 'bg-cyan-500', cat: 'Comunicação' },
+    'English': { icon: MessageCircle, color: 'bg-cyan-500', cat: 'Communication' },
     '.NET': { icon: Code, color: 'bg-pink-500', cat: 'Backend' },
     'RabbitMQ': { icon: Layers, color: 'bg-orange-500', cat: 'Mensageria' },
     'SQL': { icon: Database, color: 'bg-blue-500', cat: 'Database' },
     'MongoDB': { icon: Database, color: 'bg-emerald-500', cat: 'Database' },
-    'Estrutura de dados': { icon: GitMerge, color: 'bg-violet-600', cat: 'Fundamentos' },
-    'Data Structures': { icon: GitMerge, color: 'bg-violet-600', cat: 'Fundamentals' },
+    'Estrutura de dados': { icon: GitMerge, color: 'bg-cyan-600', cat: 'Fundamentos' },
+    'Data Structures': { icon: GitMerge, color: 'bg-cyan-600', cat: 'Fundamentals' },
     'Cloud': { icon: Cloud, color: 'bg-blue-400', cat: 'Infrastructure' },
     'Ágil': { icon: Layers, color: 'bg-orange-400', cat: 'Metodologia' },
     'Agile': { icon: Layers, color: 'bg-orange-400', cat: 'Motodology' },
     'DevOps': { icon: Terminal, color: 'bg-teal-500', cat: 'Operations' },
     'CI/CD': { icon: GitMerge, color: 'bg-pink-500', cat: 'Automation' },
     'Python': { icon: Code, color: 'bg-slate-500', cat: 'Programming' },
-    'Machine Learning': { icon: BrainCircuit, color: 'bg-violet-500', cat: 'AI' }
+    'Machine Learning': { icon: BrainCircuit, color: 'bg-cyan-500', cat: 'AI' }
   };
   return styles[skillName] || { icon: Code, color: 'bg-slate-500', cat: 'Tech' };
 };
@@ -201,7 +201,7 @@ export function ResumePage({ lang }) {
                 key={idx}
                 href={item.href}
                 onClick={(e) => handleScroll(e, item.href)}
-                className="text-sm font-medium text-slate-500 hover:text-violet-600 transition-colors"
+                className="text-sm font-medium text-slate-500 hover:text-cyan-600 transition-colors"
               >
                 {item.label}
               </a>
@@ -213,7 +213,7 @@ export function ResumePage({ lang }) {
               type="button"
               onClick={handleToggleLang}
               aria-label={getLangToggleLabel(lang)}
-              className="group relative p-2 border rounded-md hover:bg-slate-50 hover:border-violet-300 text-slate-500 hover:text-violet-600 transition-colors cursor-pointer"
+              className="group relative p-2 border rounded-md hover:bg-slate-50 hover:border-cyan-300 text-slate-500 hover:text-cyan-600 transition-colors cursor-pointer"
             >
               <Globe size={18} />
               <span
@@ -227,7 +227,7 @@ export function ResumePage({ lang }) {
             </button>
             <Button
               onClick={handleDownloadCv}
-              className="bg-violet-600 hover:bg-violet-700 text-white rounded-full px-6 text-sm font-medium"
+              className="bg-cyan-600 hover:bg-cyan-700 text-white rounded-full px-6 text-sm font-medium"
             >
               <Download size={14} className="mr-2" />
               {lang === 'pt' ? 'Baixar CV' : 'Download CV'}
@@ -255,7 +255,7 @@ export function ResumePage({ lang }) {
                 <h1 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
                   {data.name}
                 </h1>
-                <p className="text-xl text-violet-600 mt-2 font-semibold">
+                <p className="text-xl text-cyan-600 mt-2 font-semibold">
                   {data.title}
                 </p>
               </div>
@@ -267,9 +267,9 @@ export function ResumePage({ lang }) {
               <Button
                 variant="outline"
                 onClick={() => setIsContactModalOpen(true)}
-                className="group relative border-violet-600 text-violet-600 hover:text-white font-bold px-8 py-6 rounded-xl transition-all duration-300 overflow-hidden shadow-sm hover:shadow-violet-200 hover:shadow-lg active:scale-95"
+                className="group relative border-cyan-600 text-cyan-600 hover:text-white font-bold px-8 py-6 rounded-xl transition-all duration-300 overflow-hidden shadow-sm hover:shadow-cyan-200 hover:shadow-lg active:scale-95"
               >
-                <span className="absolute inset-0 bg-violet-600 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+                <span className="absolute inset-0 bg-cyan-600 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                 <span className="relative z-10 flex items-center gap-2">
                   {lang === 'pt' ? 'Entre em Contato' : 'Get in Touch'}
                   <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
@@ -338,7 +338,7 @@ export function ResumePage({ lang }) {
             </div>
 
             <div className="relative max-w-4xl mx-auto">
-              <div className="absolute left-[9px] top-3 bottom-3 w-[2px] bg-violet-200" />
+              <div className="absolute left-[9px] top-3 bottom-3 w-[2px] bg-cyan-200" />
               <div className="space-y-10">
                 {data.jobs?.map((job, index) => (
                   <motion.div
@@ -353,14 +353,14 @@ export function ResumePage({ lang }) {
                       <div
                         className={`w-[18px] h-[18px] rounded-full shadow-[0_0_0_4px_white] z-10 ${
                           job.isCurrent
-                            ? 'bg-violet-600 ring-4 ring-violet-200'
-                            : 'bg-violet-600'
+                            ? 'bg-cyan-600 ring-4 ring-cyan-200'
+                            : 'bg-cyan-600'
                         }`}
                       />
                     </div>
                     <div className="flex-1 min-w-0">
                       <Card className="relative overflow-hidden border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300">
-                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-violet-600" />
+                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-cyan-600" />
                         <CardContent className="p-8 pl-9">
                           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-5">
                             <div className="space-y-1">
@@ -369,7 +369,7 @@ export function ResumePage({ lang }) {
                             </div>
                             <span
                               className={`self-start px-4 py-1.5 rounded-full text-[0.75rem] font-medium whitespace-nowrap ${
-                                job.isCurrent ? 'bg-violet-50 text-violet-600' : 'bg-slate-100 text-slate-400'
+                                job.isCurrent ? 'bg-cyan-50 text-cyan-600' : 'bg-slate-100 text-slate-400'
                               }`}
                             >
                               {job.period}
@@ -379,7 +379,7 @@ export function ResumePage({ lang }) {
                             <ul className="space-y-3 mb-6">
                               {job.highlights.map((item, hIdx) => (
                                 <li key={hIdx} className="flex gap-3 text-slate-500 text-[0.9rem] leading-relaxed">
-                                  <Check size={16} className="text-violet-600 shrink-0 mt-0.5" strokeWidth={2.5} />
+                                  <Check size={16} className="text-cyan-600 shrink-0 mt-0.5" strokeWidth={2.5} />
                                   <span>{item}</span>
                                 </li>
                               ))}
@@ -390,7 +390,7 @@ export function ResumePage({ lang }) {
                               {job.skills.map((skill) => (
                                 <span
                                   key={skill}
-                                  className="px-3 py-1 border border-violet-300 text-violet-500 bg-transparent text-[0.75rem] font-medium rounded-md"
+                                  className="px-3 py-1 border border-cyan-300 text-cyan-500 bg-transparent text-[0.75rem] font-medium rounded-md"
                                 >
                                   {skill}
                                 </span>
@@ -418,7 +418,7 @@ export function ResumePage({ lang }) {
             </div>
 
             <div className="relative max-w-4xl mx-auto">
-              <div className="absolute left-[9px] top-3 bottom-3 w-[2px] bg-violet-200" />
+              <div className="absolute left-[9px] top-3 bottom-3 w-[2px] bg-cyan-200" />
               <div className="space-y-10">
                 {data.education?.map((edu, index) => (
                   <motion.div
@@ -430,7 +430,7 @@ export function ResumePage({ lang }) {
                     className="relative flex gap-6 md:gap-10"
                   >
                     <div className="shrink-0 w-5 flex justify-center pt-8">
-                      <div className="w-[18px] h-[18px] rounded-full bg-violet-600 shadow-[0_0_0_4px_white] z-10" />
+                      <div className="w-[18px] h-[18px] rounded-full bg-cyan-600 shadow-[0_0_0_4px_white] z-10" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <Card className="border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300">
@@ -445,7 +445,7 @@ export function ResumePage({ lang }) {
                               <p className="text-[1rem] text-slate-500 font-medium">{edu.type}</p>
                             ) : null}
                             {edu.period && (
-                              <p className="text-sm text-violet-600 font-medium">{edu.period}</p>
+                              <p className="text-sm text-cyan-600 font-medium">{edu.period}</p>
                             )}
                           </div>
                           <p className="text-slate-500 text-[0.9rem] leading-relaxed mb-6">
@@ -454,7 +454,7 @@ export function ResumePage({ lang }) {
                           {(edu.techs || edu.skills)?.length > 0 && (
                             <div className="flex flex-wrap gap-2">
                               {(edu.techs || edu.skills).map((tech, tIdx) => (
-                                <span key={tIdx} className="px-3 py-1 border border-violet-300 text-violet-500 bg-transparent text-[0.75rem] font-medium rounded-md">{tech}</span>
+                                <span key={tIdx} className="px-3 py-1 border border-cyan-300 text-cyan-500 bg-transparent text-[0.75rem] font-medium rounded-md">{tech}</span>
                               ))}
                             </div>
                           )}
@@ -492,17 +492,17 @@ export function ResumePage({ lang }) {
                     <Card className="border border-slate-200 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] hover:shadow-md transition-all duration-300 h-full flex flex-col bg-white rounded-xl">
                       <CardContent className="p-8 flex flex-col h-full">
                         <div className="flex items-center gap-4 mb-4">
-                          <div className="w-12 h-12 rounded-xl bg-violet-600 text-white flex items-center justify-center shrink-0 shadow-inner">
+                          <div className="w-12 h-12 rounded-xl bg-cyan-600 text-white flex items-center justify-center shrink-0 shadow-inner">
                             <ProjectIcon size={24} />
                           </div>
                           <div>
                             <h3 className="font-bold text-slate-900 text-[1.1rem] leading-tight">{project.title}</h3>
-                            <p className="text-violet-500 text-xs font-semibold uppercase tracking-wider mt-1">{project.period || 'jan/24 - dez/24'}</p>
+                            <p className="text-cyan-500 text-xs font-semibold uppercase tracking-wider mt-1">{project.period || 'jan/24 - dez/24'}</p>
                           </div>
                         </div>
                         <p className="text-slate-500 text-[0.95rem] leading-relaxed mb-8 flex-1 line-clamp-4">{project.contents}</p>
                         <div className="border-t border-slate-100 pt-5 flex justify-end">
-                          <button onClick={() => setSelectedProject(project)} className="text-violet-600 text-[0.8rem] font-bold flex items-center gap-1 hover:text-violet-800 transition-colors group tracking-wide uppercase cursor-pointer">
+                          <button onClick={() => setSelectedProject(project)} className="text-cyan-600 text-[0.8rem] font-bold flex items-center gap-1 hover:text-cyan-800 transition-colors group tracking-wide uppercase cursor-pointer">
                             {lang === 'pt' ? 'Mais detalhes' : 'More details'} 
                             <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
                           </button>
@@ -535,12 +535,12 @@ export function ResumePage({ lang }) {
               >
                 <div className="flex items-center justify-between p-6 border-b border-slate-100 bg-white">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-violet-600 text-white flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-xl bg-cyan-600 text-white flex items-center justify-center">
                       <ModalIcon size={24} />
                     </div>
                     <div>
                       <h3 className="font-bold text-slate-900 text-xl">{selectedProject.title}</h3>
-                      <p className="text-violet-500 text-sm font-medium uppercase tracking-wider">{selectedProject.period || 'jan/24 - dez/24'}</p>
+                      <p className="text-cyan-500 text-sm font-medium uppercase tracking-wider">{selectedProject.period || 'jan/24 - dez/24'}</p>
                     </div>
                   </div>
                   <button onClick={() => setSelectedProject(null)} className="p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-full transition-colors cursor-pointer">
@@ -557,7 +557,7 @@ export function ResumePage({ lang }) {
                       <h4 className="text-xs font-bold text-slate-400 mb-3 uppercase tracking-widest">{lang === 'pt' ? 'Tecnologias utilizadas' : 'Technologies used'}</h4>
                       <div className="flex flex-wrap gap-2">
                         {selectedProject.techs.map((tech, i) => (
-                          <span key={i} className="px-3 py-1 bg-white text-violet-600 text-xs font-bold rounded-lg border border-violet-100 shadow-sm">{tech}</span>
+                          <span key={i} className="px-3 py-1 bg-white text-cyan-600 text-xs font-bold rounded-lg border border-cyan-100 shadow-sm">{tech}</span>
                         ))}
                       </div>
                     </div>
@@ -569,7 +569,7 @@ export function ResumePage({ lang }) {
                     {lang === 'pt' ? 'Fechar' : 'Close'}
                   </Button>
                   {selectedProject.link && (
-                    <Button className="bg-violet-600 hover:bg-violet-700 text-white shadow-md shadow-violet-200" onClick={() => window.open(selectedProject.link, '_blank')}>
+                    <Button className="bg-cyan-600 hover:bg-cyan-700 text-white shadow-md shadow-cyan-200" onClick={() => window.open(selectedProject.link, '_blank')}>
                       {lang === 'pt' ? 'Acessar' : 'View'} 
                       <ExternalLink size={16} className="ml-2" />
                     </Button>
@@ -600,18 +600,18 @@ export function ResumePage({ lang }) {
                 <form onSubmit={handleSendMessage} className="space-y-5 flex-1">
                   <div className="space-y-2">
                     <label className="text-sm font-semibold text-slate-700">{lang === 'pt' ? 'Seu Nome' : 'Your Name'}</label>
-                    <input type="text" required value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 outline-none transition-all text-sm" placeholder={lang === 'pt' ? 'João Silva' : 'John Doe'} />
+                    <input type="text" required value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all text-sm" placeholder={lang === 'pt' ? 'João Silva' : 'John Doe'} />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-semibold text-slate-700">{lang === 'pt' ? 'Seu E-mail' : 'Your Email'}</label>
-                    <input type="email" required value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 outline-none transition-all text-sm" placeholder="email@exemplo.com" />
+                    <input type="email" required value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all text-sm" placeholder="email@exemplo.com" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-semibold text-slate-700">{lang === 'pt' ? 'Sua Mensagem' : 'Your Message'}</label>
-                    <textarea required rows={4} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-violet-500 focus:ring-2 focus:ring-violet-200 outline-none transition-all text-sm resize-none" placeholder={lang === 'pt' ? 'Olá Lucas, gostaria de falar sobre...' : 'Hi Lucas, I would like to talk about...'} />
+                    <textarea required rows={4} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all text-sm resize-none" placeholder={lang === 'pt' ? 'Olá Lucas, gostaria de falar sobre...' : 'Hi Lucas, I would like to talk about...'} />
                   </div>
                   
-                  <Button disabled={isSubmitting} type="submit" className={`w-full text-white font-bold py-6 rounded-xl shadow-lg transition-all ${isSubmitting ? 'bg-violet-400' : 'bg-violet-600 hover:bg-violet-700 shadow-violet-200 active:scale-[0.98]'}`}>
+                  <Button disabled={isSubmitting} type="submit" className={`w-full text-white font-bold py-6 rounded-xl shadow-lg transition-all ${isSubmitting ? 'bg-cyan-400' : 'bg-cyan-600 hover:bg-cyan-700 shadow-cyan-200 active:scale-[0.98]'}`}>
                     {isSubmitting ? (
                       <>{lang === 'pt' ? 'Enviando...' : 'Sending...'} <Loader2 size={18} className="ml-2 animate-spin" /></>
                     ) : (
@@ -629,7 +629,7 @@ export function ResumePage({ lang }) {
                     <h4 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">{lang === 'pt' ? 'Informações de Contato' : 'Contact Information'}</h4>
                     <div className="space-y-3">
                       <div className="flex items-center gap-3 text-slate-600">
-                        <Mail size={18} className="text-violet-600 shrink-0" />
+                        <Mail size={18} className="text-cyan-600 shrink-0" />
                         <span className="text-sm font-medium">teixeiralucas793@outlook.com</span>
                       </div>
                       <a

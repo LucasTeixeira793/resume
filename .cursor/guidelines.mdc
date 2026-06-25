@@ -30,16 +30,24 @@ Site pessoal de currículo e portfólio de **Lucas Menezes Teixeira**, desenvolv
 ```
 src/
   app/
-    layout.jsx      # Layout raiz, metadata, fonte Montserrat
-    page.jsx        # Página principal (client component com toda a UI)
-    globals.css     # Tailwind + tokens shadcn
+    layout.jsx           # Layout raiz, metadata, fonte Montserrat
+    page.jsx             # Rota / (inglês)
+    pt-BR/page.jsx       # Rota /pt-BR (português)
+    not-found.jsx        # Fallback de redirect por idioma
+    middleware.js        # Redirect de rotas inválidas
+  components/
+    resume-page.jsx      # UI principal (client component)
+    ui/                  # shadcn: Button, Card
   data/
-    index.js        # export resumeData { pt, en }
-    pt-BR.js        # Conteúdo em português
-    en.js           # Conteúdo em inglês
-  components/ui/    # shadcn: Button, Card
-  lib/utils.js      # cn() — clsx + tailwind-merge
-public/             # me.png (foto do perfil)
+    index.js             # export resumeData { pt, en }
+    pt-BR.js             # Conteúdo em português
+    en.js                # Conteúdo em inglês
+  lib/
+    cv.js                # Caminhos dos PDFs para download
+    i18n.js              # Rotas e helpers de idioma
+public/
+  me.png                 # Foto do perfil
+  cv/                    # PDFs estáticos (PT e EN)
 ```
 
 **Alias de importação**: `@/*` → `src/*` (definido em `jsconfig.json`).
@@ -47,29 +55,30 @@ public/             # me.png (foto do perfil)
 ## Funcionalidades
 
 ### Navbar (sticky)
-- Nome do candidato, links de âncora com scroll suave (`#habilidades`, `#experiencia`, `#educacao`, `#projetos`).
+- Nome: **Lucas** no mobile, **nome completo** no desktop (`lg+`).
+- Links de âncora com scroll suave (`#habilidades`, `#experiencia`, `#educacao`, `#projetos`); ocultos em `< lg`.
 - Toggle de idioma PT ↔ EN navega entre `/` (inglês) e `/pt-BR` (português).
 - Rotas inexistentes redirecionam para a raiz do idioma atual (`/` ou `/pt-BR`) via `src/middleware.js`.
 - Botão **Baixar CV** baixa o PDF estático de `public/cv/` conforme idioma ativo. PDFs são mantidos manualmente — ver `src/lib/cv.js` para os caminhos.
 
 ### Hero (`#topo`)
-- Foto circular (`/me.png` via `next/image`).
+- Foto circular centralizada no mobile, à esquerda no desktop (`/me.png` via `next/image`).
 - Nome, título, descrição (de `data`).
 - Botão **Entre em Contato** abre modal.
 
 ### Habilidades (`#habilidades`)
-- Grid responsivo de cards com ícone, nome e categoria.
-- Mapeamento visual em `getSkillStyle()` — **chaves devem corresponder ao nome da skill no idioma ativo** (ex.: `'Inglês'` em PT, `'English'` em EN).
+- Flex wrap com `justify-center` — linhas incompletas centralizadas no desktop.
+- Cards com ícone, nome e categoria; mapeamento em `getSkillStyle()`.
+- **Chaves devem corresponder ao nome da skill no idioma ativo** (ex.: `'Inglês'` em PT, `'English'` em EN).
 
 ### Experiência (`#experiencia`)
-- Timeline à esquerda, cards à direita (mesmo padrão da educação, com faixa violeta lateral e bullets com ícone `Check`).
+- Timeline à esquerda, cards à direita (faixa **cyan** lateral, bullets com ícone `Check`).
 - Cada item em `data.jobs`: `company`, `role`, `period`, `highlights[]` (bullets XYZ), `skills[]`, `isCurrent?`.
-- Badge de período em destaque violeta quando `isCurrent: true`; bolinha da timeline com `ring-violet-200`.
+- Badge de período em destaque **cyan** quando `isCurrent: true`; bolinha da timeline com `ring-cyan-200`.
 
 ### Educação (`#educacao`)
-- Timeline alternada (zigzag) em desktop.
-- Campos: `title`, `contents`, `techs` (tags violeta).
-- `title` pode conter `"Instituição - Curso"` (split automático).
+- Timeline à esquerda, cards à direita (mesmo padrão da experiência, sem faixa lateral).
+- Campos: `title`, `contents`, `skills`/`techs` (tags **cyan**), `period`, `type`.
 
 ### Projetos (`#projetos`)
 - Grid 2 colunas com preview (`line-clamp-4`) e modal de detalhes.
@@ -79,7 +88,8 @@ public/             # me.png (foto do perfil)
 ### Modal de contato
 - Formulário: nome, e-mail, mensagem.
 - Envio via formulário HTML oculto POST para `https://formsubmit.co/teixeiralucas793@outlook.com`.
-- Painel lateral: e-mail, LinkedIn, GitHub (links hardcoded em `page.jsx`).
+- Mobile: formulário + informações de contato empilhados; scroll interno no card branco.
+- Painel lateral (desktop): e-mail, WhatsApp, LinkedIn, GitHub.
 
 ### Footer
 - Copyright dinâmico com `data.name`.
@@ -104,8 +114,10 @@ Conteúdo **sempre nos arquivos de dados**, não hardcoded no JSX (exceto links 
 ## Design system e estilos
 
 ### Paleta e identidade
-- **Cor de destaque**: `violet-600` / `violet-700` (hover) — botões, links, badges, timeline.
+- **Cor de destaque**: `cyan-600` / `cyan-700` (hover) — botões, links, badges, timeline, ícones de bullet.
+- **Variações**: `cyan-50` (badges ativos), `cyan-200` (linhas/ rings), `cyan-300` (bordas de tags), `cyan-500` (textos secundários de destaque).
 - **Neutros**: `slate-50` (fundos alternados), `slate-800/900` (texto), `slate-400/500` (secundário).
+- **Exceções de marca**: WhatsApp (`green-600`), LinkedIn (`blue-600`) — manter cores originais das redes.
 - **Seções alternadas**: branco (`bg-white`) ↔ `bg-slate-50`.
 - **Largura máxima**: `max-w-[1400px]` com padding `px-6 md:px-12`.
 
@@ -116,7 +128,8 @@ Conteúdo **sempre nos arquivos de dados**, não hardcoded no JSX (exceto links 
 
 ### Componentes visuais
 - **Cards**: shadcn `Card` + `CardContent`, bordas suaves, sombras leves (`shadow-sm`, `shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)]`).
-- **Botões primários**: `bg-violet-600 hover:bg-violet-700 rounded-full` (navbar) ou `rounded-xl` (ações).
+- **Botões primários**: `bg-cyan-600 hover:bg-cyan-700 rounded-full` (navbar) ou `rounded-xl` (ações).
+- **Botões outline (contato)**: `border-cyan-600 text-cyan-600` com fill animado no hover.
 - **Modais**: overlay `bg-slate-900/40 backdrop-blur-sm`, `z-[100]`, animação scale/fade (Framer Motion `AnimatePresence`).
 - **Âncoras**: `scroll-mt-16` nas seções (compensa navbar sticky de `h-16`).
 
@@ -127,14 +140,14 @@ Conteúdo **sempre nos arquivos de dados**, não hardcoded no JSX (exceto links 
 - Manter animações sutis e performáticas; não bloquear interação.
 
 ### Responsividade
-- Navbar: links ocultos em `< lg` (sem menu mobile hamburger ainda).
-- Hero: coluna em mobile, linha em `md+`.
-- Educação: timeline central só em `md+`; mobile empilha à esquerda.
+- Navbar: links ocultos em `< lg`; nome abreviado no mobile.
+- Hero: coluna em mobile (foto centralizada), linha em `md+`.
+- Educação e experiência: timeline à esquerda em todas as larguras.
 
 ## Regras para alterações
 
 ### Código
-1. **`page.jsx` é `'use client'`** — interatividade (estado, scroll, modais) fica aqui ou em componentes filhos client.
+1. **`resume-page.jsx` é `'use client'`** — interatividade (estado, scroll, modais) fica aqui.
 2. **Preferir JSX** — projeto não usa TypeScript (`components.json`: `"tsx": false`).
 3. **Usar `@/`** para imports internos; componentes shadcn em `@/components/ui/`.
 4. **Usar `cn()`** ao compor classes Tailwind em componentes reutilizáveis.
@@ -151,7 +164,7 @@ Conteúdo **sempre nos arquivos de dados**, não hardcoded no JSX (exceto links 
 4. `education.contents` — preferir **string**; arrays do legado podem quebrar renderização atual.
 
 ### UI/UX
-1. Manter consistência violeta + slate; não introduzir paletas conflitantes.
+1. Manter consistência **cyan + slate**; não reintroduzir violeta ou paletas conflitantes.
 2. Novas seções: seguir padrão título + linha divisória + `scroll-mt-16` + alternância de fundo.
 3. Modais: sempre backdrop clicável para fechar, botão X, `AnimatePresence`.
 4. Links externos: `target="_blank"` + `rel="noreferrer"`.
