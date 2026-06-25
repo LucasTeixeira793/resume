@@ -1,22 +1,78 @@
-# Curriculum Vitae Lucas Teixeira
+# Resume — Portfólio de Lucas Menezes Teixeira
 
-## Instalação
+Site pessoal de currículo e portfólio profissional, construído com Next.js. Apresenta perfil, habilidades, experiência, educação e projetos com suporte bilíngue (PT/EN).
 
-1. Install project dependencies with `npm install`.
-1. Run `npm run deploy` to initialize `gh-pages`. This is a one time action. Further deployments will be initiated by GitHub Actions on every push to `main`.
+## Stack
 
-## Usage
+- **Next.js 16** (App Router)
+- **React 19** + JSX
+- **Tailwind CSS 4** + shadcn/ui
+- **Framer Motion** (animações)
 
-1. Start local development server with `npm start`.
-1. Update contents of `src` folder to fit your needs. This item is explained [below](#update-contents).
-1. Commit and push your changes.
-1. GitHub Actions will automatically build the latest version and deploy it to GitHub Pages.
-1. Open `https://lucasteixeira793.github.io/resume/`.
+## Funcionalidades
 
-### Update contents
+- Página única com navegação por âncoras e scroll suave
+- Alternância de idioma (português / inglês)
+- Modal de contato via [FormSubmit](https://formsubmit.co)
+- Modal de detalhes dos projetos
+- **Download do CV** em PDF (versão PT ou EN conforme idioma ativo)
 
-The project uses [HandlebarsJS](https://github.com/wycats/handlebars.js/) as a template engine.
+## Estrutura
 
-The main HTML template is located in [src/templates/index.html](src/templates/index.html). Metadata for the template could be found in [src/metadata/metadata.js](src/metadata/metadata.js).
+```
+src/
+  app/page.jsx      # Página principal
+  data/
+    pt-BR.js        # Conteúdo em português
+    en.js           # Conteúdo em inglês
+  lib/cv.js         # Caminhos dos PDFs para download
+  components/ui/    # Button, Card (shadcn)
+public/
+  me.png            # Foto do perfil
+  cv/
+    CV-Lucas-Teixeira-pt.pdf
+    CV-Lucas-Teixeira-en.pdf
+```
 
-Don't forget to update [src/assets/favicon.ico](src/assets/favicon.ico). You can generate a new favicon out of your photo with [icoconvert.com](http://icoconvert.com/).
+## Como rodar
+
+```bash
+npm install
+npm run dev
+```
+
+Acesse [http://localhost:3000](http://localhost:3000).
+
+## Build e deploy
+
+```bash
+npm run build
+npm run start
+```
+
+## Atualizar o CV em PDF
+
+Os PDFs são arquivos estáticos em `public/cv/`, mantidos manualmente:
+
+| Arquivo | Idioma |
+|---------|--------|
+| `CV-Lucas-Teixeira-pt.pdf` | Português |
+| `CV-Lucas-Teixeira-en.pdf` | Inglês |
+
+Para alterar o currículo em PDF, substitua o arquivo correspondente. Se usar um nome diferente, atualize os caminhos em `src/lib/cv.js`.
+
+O conteúdo exibido no site (`src/data/`) é independente dos PDFs — alterações no site não atualizam o PDF automaticamente.
+
+## Editar conteúdo do site
+
+Todo o texto do portfólio fica em `src/data/pt-BR.js` e `src/data/en.js`. Mantenha os dois arquivos sincronizados ao adicionar ou alterar informações.
+
+Ícones de habilidades e projetos são mapeados em `getSkillStyle()` e `getProjectIcon()` dentro de `src/app/page.jsx`.
+
+## Deploy
+
+Compatível com [Vercel](https://vercel.com) e qualquer host que suporte Next.js.
+
+## Licença
+
+Projeto pessoal — uso livre para referência, sem garantias.
