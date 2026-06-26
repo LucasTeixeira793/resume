@@ -84,7 +84,6 @@ const getProjectIcon = (projectName) => {
 export function ResumePage({ lang }) {
   const router = useRouter();
   const [selectedProject, setSelectedProject] = useState(null);
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   
@@ -95,15 +94,14 @@ export function ResumePage({ lang }) {
   }, [lang]);
 
   useEffect(() => {
-    const isModalOpen = isContactModalOpen || selectedProject !== null;
-    if (!isModalOpen) return;
+    if (selectedProject === null) return;
 
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     return () => {
       document.body.style.overflow = previousOverflow;
     };
-  }, [isContactModalOpen, selectedProject]);
+  }, [selectedProject]);
 
   const handleToggleLang = () => {
     const hash = typeof window !== 'undefined' ? window.location.hash : '';
@@ -115,6 +113,7 @@ export function ResumePage({ lang }) {
     { label: lang === 'pt' ? 'Experiência Profissional' : 'Experience', href: '#experiencia' },
     { label: lang === 'pt' ? 'Educação' : 'Education', href: '#educacao' },
     { label: lang === 'pt' ? 'Projetos' : 'Projects', href: '#projetos' },
+    { label: lang === 'pt' ? 'Contato' : 'Contact', href: '#contato' },
   ];
 
   const handleScroll = (e, href) => {
@@ -163,8 +162,6 @@ export function ResumePage({ lang }) {
       form.submit();
       document.body.removeChild(form);
 
-      // Fecha o PopUp e limpa os campos
-      setIsContactModalOpen(false);
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
       alert(lang === 'pt' ? 'Erro ao enviar. Tente novamente.' : 'Error sending. Try again.');
@@ -266,7 +263,7 @@ export function ResumePage({ lang }) {
 
               <Button
                 variant="outline"
-                onClick={() => setIsContactModalOpen(true)}
+                onClick={(e) => handleScroll(e, '#contato')}
                 className="group relative border-cyan-600 text-cyan-600 hover:text-white font-bold px-8 py-6 rounded-xl transition-all duration-300 overflow-hidden shadow-sm hover:shadow-cyan-200 hover:shadow-lg active:scale-95"
               >
                 <span className="absolute inset-0 bg-cyan-600 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-out" />
@@ -516,6 +513,99 @@ export function ResumePage({ lang }) {
           </div>
         </section>
 
+        {/* CONTATO */}
+        <section id="contato" className="w-full bg-white py-20 md:py-28 scroll-mt-16">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+            <div className="flex items-center gap-6 mb-12">
+              <h2 className="text-xl font-medium text-slate-700 whitespace-nowrap">
+                {lang === 'pt' ? 'Contato' : 'Contact'}
+              </h2>
+              <div className="h-[1px] bg-slate-200 flex-1"></div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="flex flex-col md:flex-row rounded-2xl border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] overflow-hidden bg-white"
+            >
+              <div className="w-full md:w-3/5 p-6 sm:p-8 md:p-10 flex flex-col">
+                <div className="mb-8">
+                  <h3 className="font-bold text-slate-900 text-2xl mb-2">
+                    {lang === 'pt' ? 'Envie uma mensagem' : 'Send a message'}
+                  </h3>
+                  <p className="text-slate-500 text-sm">
+                    {lang === 'pt'
+                      ? 'Preencha os dados e a mensagem será enviada direto para mim.'
+                      : 'Fill out the details and the message will be sent directly to me.'}
+                  </p>
+                </div>
+
+                <form onSubmit={handleSendMessage} className="space-y-5 flex-1">
+                  <div className="space-y-2">
+                    <label className="text-sm font-semibold text-slate-700">{lang === 'pt' ? 'Seu Nome' : 'Your Name'}</label>
+                    <input type="text" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all text-sm" placeholder={lang === 'pt' ? 'João Silva' : 'John Doe'} />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-semibold text-slate-700">{lang === 'pt' ? 'Seu E-mail' : 'Your Email'}</label>
+                    <input type="email" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all text-sm" placeholder="email@exemplo.com" />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-semibold text-slate-700">{lang === 'pt' ? 'Sua Mensagem' : 'Your Message'}</label>
+                    <textarea required rows={4} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all text-sm resize-none" placeholder={lang === 'pt' ? 'Olá Lucas, gostaria de falar sobre...' : 'Hi Lucas, I would like to talk about...'} />
+                  </div>
+
+                  <Button disabled={isSubmitting} type="submit" className={`w-full text-white font-bold py-6 rounded-xl shadow-lg transition-all ${isSubmitting ? 'bg-cyan-400' : 'bg-cyan-600 hover:bg-cyan-700 shadow-cyan-200 active:scale-[0.98]'}`}>
+                    {isSubmitting ? (
+                      <>{lang === 'pt' ? 'Enviando...' : 'Sending...'} <Loader2 size={18} className="ml-2 animate-spin" /></>
+                    ) : (
+                      <>{lang === 'pt' ? 'Enviar Mensagem' : 'Send Message'} <Send size={18} className="ml-2" /></>
+                    )}
+                  </Button>
+                </form>
+              </div>
+
+              <div className="w-full md:w-2/5 bg-slate-50 p-6 sm:p-8 md:p-10 border-t md:border-t-0 md:border-l border-slate-100 flex flex-col">
+                <div className="space-y-8">
+                  <div>
+                    <h4 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">{lang === 'pt' ? 'Informações de Contato' : 'Contact Information'}</h4>
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-3 text-slate-600">
+                        <Mail size={18} className="text-cyan-600 shrink-0" />
+                        <span className="text-sm font-medium">teixeiralucas793@outlook.com</span>
+                      </div>
+                      <a
+                        href={getWhatsappUrl(lang)}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center gap-3 text-slate-600 hover:text-green-600 transition-colors group"
+                      >
+                        <WhatsappIcon size={18} className="text-green-600 group-hover:text-green-700 shrink-0" />
+                        <span className="text-sm font-medium">{WHATSAPP_PHONE}</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">{lang === 'pt' ? 'Redes Profissionais' : 'Professional Networks'}</h4>
+                    <div className="space-y-3">
+                      <a href="https://www.linkedin.com/in/lucas-menezes-teixeira/" target="_blank" rel="noreferrer" className="flex items-center gap-4 p-4 bg-white border border-slate-200 rounded-xl hover:border-blue-300 hover:shadow-md transition-all group">
+                        <div className="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors"><LinkedinIcon size={18} /></div>
+                        <div><p className="text-sm font-bold text-slate-900">LinkedIn</p><p className="text-[0.7rem] text-slate-500 truncate max-w-[140px]">lucas-menezes-teixeira</p></div>
+                      </a>
+                      <a href="https://github.com/lucasteixeira793" target="_blank" rel="noreferrer" className="flex items-center gap-4 p-4 bg-white border border-slate-200 rounded-xl hover:border-slate-400 hover:shadow-md transition-all group">
+                        <div className="w-10 h-10 bg-slate-100 text-slate-700 rounded-full flex items-center justify-center group-hover:bg-slate-800 group-hover:text-white transition-colors"><GithubIcon size={18} /></div>
+                        <div><p className="text-sm font-bold text-slate-900">GitHub</p><p className="text-[0.7rem] text-slate-500 truncate max-w-[140px]">lucasteixeira793</p></div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
       </main>
 
       {/* POPUP DE DETALHES DO PROJETO */}
@@ -581,91 +671,7 @@ export function ResumePage({ lang }) {
         })()}
       </AnimatePresence>
 
-      {/* POPUP DE CONTATO REFORMULADO (Envio Silencioso com FormSubmit) */}
-      <AnimatePresence>
-        {isContactModalOpen && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm" onClick={() => setIsContactModalOpen(false)} />
-            <motion.div initial={{ opacity: 0, scale: 0.95, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95, y: 20 }} className="relative w-full max-w-4xl max-h-[min(90dvh,calc(100vh-2rem))] bg-white rounded-2xl shadow-2xl z-10 flex flex-col md:flex-row overflow-y-auto md:overflow-hidden">
-              
-              <div className="w-full md:w-3/5 p-6 sm:p-8 md:p-10 flex flex-col bg-white md:overflow-y-auto md:min-h-0 shrink-0">
-                <div className="flex items-center justify-between mb-8">
-                  <div>
-                    <h3 className="font-bold text-slate-900 text-2xl mb-2">{lang === 'pt' ? 'Envie uma mensagem' : 'Send a message'}</h3>
-                    <p className="text-slate-500 text-sm">{lang === 'pt' ? 'Preencha os dados e a mensagem será enviada direto para mim.' : 'Fill out the details and the message will be sent directly to me.'}</p>
-                  </div>
-                  <button onClick={() => setIsContactModalOpen(false)} className="md:hidden p-2 text-slate-400 hover:text-slate-700 bg-slate-50 rounded-full cursor-pointer"><X size={20} /></button>
-                </div>
-
-                <form onSubmit={handleSendMessage} className="space-y-5 flex-1">
-                  <div className="space-y-2">
-                    <label className="text-sm font-semibold text-slate-700">{lang === 'pt' ? 'Seu Nome' : 'Your Name'}</label>
-                    <input type="text" required value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all text-sm" placeholder={lang === 'pt' ? 'João Silva' : 'John Doe'} />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-semibold text-slate-700">{lang === 'pt' ? 'Seu E-mail' : 'Your Email'}</label>
-                    <input type="email" required value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all text-sm" placeholder="email@exemplo.com" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-semibold text-slate-700">{lang === 'pt' ? 'Sua Mensagem' : 'Your Message'}</label>
-                    <textarea required rows={4} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all text-sm resize-none" placeholder={lang === 'pt' ? 'Olá Lucas, gostaria de falar sobre...' : 'Hi Lucas, I would like to talk about...'} />
-                  </div>
-                  
-                  <Button disabled={isSubmitting} type="submit" className={`w-full text-white font-bold py-6 rounded-xl shadow-lg transition-all ${isSubmitting ? 'bg-cyan-400' : 'bg-cyan-600 hover:bg-cyan-700 shadow-cyan-200 active:scale-[0.98]'}`}>
-                    {isSubmitting ? (
-                      <>{lang === 'pt' ? 'Enviando...' : 'Sending...'} <Loader2 size={18} className="ml-2 animate-spin" /></>
-                    ) : (
-                      <>{lang === 'pt' ? 'Enviar Mensagem' : 'Send Message'} <Send size={18} className="ml-2" /></>
-                    )}
-                  </Button>
-                </form>
-              </div>
-
-              <div className="w-full md:w-2/5 bg-slate-50 p-6 sm:p-8 md:p-10 border-t md:border-t-0 md:border-l border-slate-100 flex flex-col relative md:overflow-y-auto md:min-h-0 shrink-0">
-                <button onClick={() => setIsContactModalOpen(false)} className="hidden md:flex absolute top-6 right-6 p-2 text-slate-400 hover:text-slate-700 hover:bg-white rounded-full transition-colors shadow-sm border border-transparent hover:border-slate-200 cursor-pointer"><X size={20} /></button>
-
-                <div className="space-y-8 md:mt-12">
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">{lang === 'pt' ? 'Informações de Contato' : 'Contact Information'}</h4>
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-3 text-slate-600">
-                        <Mail size={18} className="text-cyan-600 shrink-0" />
-                        <span className="text-sm font-medium">teixeiralucas793@outlook.com</span>
-                      </div>
-                      <a
-                        href={getWhatsappUrl(lang)}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex items-center gap-3 text-slate-600 hover:text-green-600 transition-colors group"
-                      >
-                        <WhatsappIcon size={18} className="text-green-600 group-hover:text-green-700 shrink-0" />
-                        <span className="text-sm font-medium">{WHATSAPP_PHONE}</span>
-                      </a>
-                    </div>
-                  </div>
-
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">{lang === 'pt' ? 'Redes Profissionais' : 'Professional Networks'}</h4>
-                    <div className="space-y-3">
-                      <a href="https://www.linkedin.com/in/lucas-menezes-teixeira/" target="_blank" rel="noreferrer" className="flex items-center gap-4 p-4 bg-white border border-slate-200 rounded-xl hover:border-blue-300 hover:shadow-md transition-all group">
-                        <div className="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors"><LinkedinIcon size={18} /></div>
-                        <div><p className="text-sm font-bold text-slate-900">LinkedIn</p><p className="text-[0.7rem] text-slate-500 truncate max-w-[140px]">lucas-menezes-teixeira</p></div>
-                      </a>
-                      <a href="https://github.com/lucasteixeira793" target="_blank" rel="noreferrer" className="flex items-center gap-4 p-4 bg-white border border-slate-200 rounded-xl hover:border-slate-400 hover:shadow-md transition-all group">
-                        <div className="w-10 h-10 bg-slate-100 text-slate-700 rounded-full flex items-center justify-center group-hover:bg-slate-800 group-hover:text-white transition-colors"><GithubIcon size={18} /></div>
-                        <div><p className="text-sm font-bold text-slate-900">GitHub</p><p className="text-[0.7rem] text-slate-500 truncate max-w-[140px]">lucasteixeira793</p></div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
-
-      <footer className="w-full bg-white border-t border-slate-100 py-10">
+      <footer className="w-full bg-slate-50 border-t border-slate-100 py-10">
         <div className="max-w-[1400px] mx-auto px-6 text-center">
           <p className="text-slate-400 text-sm font-medium">
             © {new Date().getFullYear()} {data.name}
