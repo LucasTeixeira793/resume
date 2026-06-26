@@ -12,10 +12,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Globe, Download, Database, Cloud, Code, Terminal, 
   Layers, BrainCircuit, MessageCircle, GitMerge, 
-  GraduationCap, Book, X, ChevronRight, ExternalLink,
+  GraduationCap, X, ChevronRight, ExternalLink,
   ShieldCheck, Bot, Activity, Rocket, FolderCode,
-  Mail, Send, Loader2, Check,
-  Waves, Bike, Footprints, Dumbbell, BookOpen
+  Mail, Send, Loader2, Check, Container,
+  Waves, Bike, Footprints, Dumbbell, BookOpen, Workflow, 
+  TextSearch, PanelsTopLeft, Server, Sprout
 } from 'lucide-react';
 
 // Ícones manuais para substituir os que foram removidos da biblioteca Lucide
@@ -58,10 +59,10 @@ const getSkillStyle = (skillName) => {
     'MongoDB': { icon: Database, color: 'bg-emerald-500', cat: 'Database' },
     'Estrutura de dados': { icon: GitMerge, color: 'bg-cyan-600', cat: 'Fundamentos' },
     'Data Structures': { icon: GitMerge, color: 'bg-cyan-600', cat: 'Fundamentals' },
-    'Cloud': { icon: Cloud, color: 'bg-blue-400', cat: 'Infrastructure' },
+    'AWS & Azure': { icon: Cloud, color: 'bg-blue-400', cat: 'Infrastructure' },
     'Ágil': { icon: Layers, color: 'bg-orange-400', cat: 'Metodologia' },
     'Agile': { icon: Layers, color: 'bg-orange-400', cat: 'Motodology' },
-    'DevOps': { icon: Terminal, color: 'bg-teal-500', cat: 'Operations' },
+    'Docker': { icon: Container, color: 'bg-teal-500', cat: 'Operations' },
     'CI/CD': { icon: GitMerge, color: 'bg-pink-500', cat: 'Automation' },
     'Python': { icon: Code, color: 'bg-slate-500', cat: 'Programming' },
     'Machine Learning': { icon: BrainCircuit, color: 'bg-cyan-500', cat: 'AI' }
@@ -71,12 +72,14 @@ const getSkillStyle = (skillName) => {
 
 const getProjectIcon = (projectName) => {
   const icons = {
+    'Plataforma de integração ERP - CRM': Workflow,
+    'ERP - CRM Integration Platform': Workflow,
     'TCC': GraduationCap,
     'Capstone Project': GraduationCap,
-    'Kallistra': Rocket,
-    'Iara': Bot,
-    'SafeLog': ShieldCheck,
-    'StrongBerry': Activity,
+    'Kallistra': TextSearch,
+    'Iara': PanelsTopLeft,
+    'SafeLog': Server,
+    'StrongBerry': Sprout,
     'Semstress ABC': Layers
   };
   return icons[projectName] || FolderCode; 
@@ -504,8 +507,15 @@ export function ResumePage({ lang }) {
                             <p className="text-cyan-500 text-xs font-semibold uppercase tracking-wider mt-1">{project.period || 'jan/24 - dez/24'}</p>
                           </div>
                         </div>
-                        <p className="text-slate-500 text-[0.95rem] leading-relaxed mb-8 flex-1 line-clamp-4">{project.contents}</p>
-                        <div className="border-t border-slate-100 pt-5 flex justify-end">
+                        <p className="text-slate-500 text-[0.95rem] leading-relaxed mb-4 flex-1 line-clamp-4">{project.contents}</p>
+                        {project.techs?.length > 0 && (
+                          <div className="flex flex-wrap gap-2 mb-6">
+                            {project.techs.map((tech, tIdx) => (
+                              <span key={tIdx} className="px-3 py-1 border border-cyan-300 text-cyan-500 bg-transparent text-[0.75rem] font-medium rounded-md">{tech}</span>
+                            ))}
+                          </div>
+                        )}
+                        <div className="border-t border-slate-100 pt-5 flex justify-end mt-auto">
                           <button onClick={() => setSelectedProject(project)} className="text-cyan-600 text-[0.8rem] font-bold flex items-center gap-1 hover:text-cyan-800 transition-colors group tracking-wide uppercase cursor-pointer">
                             {lang === 'pt' ? 'Mais detalhes' : 'More details'} 
                             <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />

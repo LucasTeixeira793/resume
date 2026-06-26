@@ -9,9 +9,9 @@ export const en = {
     ['SQL', 100],
     ['MongoDB', 100],
     ['Data Structures', 70],
-    ['Cloud', 75],
+    ['AWS & Azure', 75],
     ['Agile', 100],
-    ['DevOps', 100],
+    ['Docker', 100],
     ['CI/CD', 70],
     ['Python', 68],
     ['Machine Learning', 68]
@@ -87,7 +87,7 @@ export const en = {
       period: '2025 - 2026',
       contents: 'Development of a bidirectional integration between the EPS ERP system and RD Station CRM, automating the synchronization of commercial and customer data.',
       details:  'This project aimed to connect the EPS ERP system and RD Station CRM through a bidirectional integration, ensuring that customer information, sales opportunities, and business processes were automatically synchronized across both platforms. The solution eliminated manual data updates, reduced information inconsistencies, and improved operational efficiency for sales and customer relationship teams.',
-      techs: ['SQL Server', '.NET', 'Clean Architecture', 'Quartz', 'Webhooks', 'Polly', 'Refit']
+      techs: ['SQL Server', '.NET', 'Clean Architecture', 'Scheduling', 'Webhooks', 'Resilience']
     },
     {
       title: 'Capstone Project',

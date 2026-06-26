@@ -9,9 +9,9 @@ export const ptBR = {
     ['SQL', 100],
     ['MongoDB', 100],
     ['Estrutura de dados', 70],
-    ['Cloud', 75],
+    ['AWS & Azure', 75],
     ['Ágil', 100],
-    ['DevOps', 100],
+    ['Docker', 100],
     ['CI/CD', 70],
     ['Python', 68],
     ['Machine Learning', 68]
@@ -82,11 +82,11 @@ export const ptBR = {
   ],
   projects: [
     {
-      title: 'Plataforma de integração ERP - CRM ',
+      title: 'Plataforma de integração ERP - CRM',
       period: '2025 - 2026',
       contents: 'Desenvolvimento de uma integração bidirecional entre o ERP EPS e o CRM RD Station, automatizando a sincronização de dados comerciais e cadastrais.',
       details: 'Este projeto teve como objetivo conectar os sistemas ERP EPS e RD Station por meio de uma integração bidirecional, garantindo que informações de clientes, oportunidades e processos comerciais fossem sincronizadas automaticamente entre as plataformas. A solução eliminou processos manuais de atualização de dados, reduziu inconsistências nas informações e aumentou a eficiência operacional das equipes de vendas e relacionamento com clientes.',
-      techs: [ 'SQL Server', '.NET', 'Arquitetura Limpa', 'Quartz', 'Webhooks', 'Polly', 'Refit']
+      techs: [ 'SQL Server', '.NET', 'Arquitetura Limpa', 'Scheduling', 'Webhooks', 'Resilience']
     },
     {
       title: 'TCC',
