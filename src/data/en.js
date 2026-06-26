@@ -134,5 +134,20 @@ export const en = {
       details:  'SemStress ABC was developed to simplify the search for seamstresses, thrift stores, and small local businesses, helping connect consumers with nearby service providers and vendors. The platform promotes affordable products and services while increasing the visibility of local entrepreneurs. Built using PHP, MySQL, and Bootstrap, the solution delivers a simple, responsive, and user-friendly web experience.',
       techs: ['Bootstrap', 'PHP', 'MySQL']
     }
-  ]
+  ],
+  about: {
+    title: 'Beyond Code',
+    intro: 'Life is not built on system architecture and lines of code alone. Off screen, I constantly seek challenges that exercise mind and body in different ways:',
+    interests: [
+      {
+        title: 'Triathlon',
+        text: 'I have been practicing weight training and running for over 5 years, and a little over a year ago I decided to combine the disciplines and transition to triathlon. Today, I dedicate 10 to 14 hours weekly to training (swimming, cycling, running, and gym) — an endurance routine that reinforces my discipline, consistency, and resilience every day.',
+      },
+      {
+        title: 'Reading',
+        text: 'Although science fiction stories are my favorites (for their creativity and visions of the future), my bookshelf is quite diverse and includes books on finance, personal development, history, and, of course, technology.',
+      },
+    ],
+    closing: 'I believe that high technical performance comes from the balance between a body in motion and a mind in constant learning.',
+  },
 };

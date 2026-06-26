@@ -133,5 +133,20 @@ export const ptBR = {
       details:  'SemStress ABC foi desenvolvida com o objetivo de facilitar a busca por costureiras, bazares e pequenos comerciantes da região, aproximando consumidores de fornecedores locais. A plataforma permite que usuários encontrem produtos e serviços mais acessíveis, ao mesmo tempo em que contribui para a visibilidade e fortalecimento dos negócios locais. O sistema foi desenvolvido utilizando PHP, MySQL e Bootstrap, oferecendo uma interface web simples, responsiva e de fácil utilização.',
       techs: ['Bootstrap', 'PHP', 'MySQL']
     }
-  ]
+  ],
+  about: {
+    title: 'Além do Código',
+    intro: 'Nem só de arquitetura de sistemas e linhas de código se faz o dia a dia. Fora das telas, busco constantemente desafios que exercitem a mente e o corpo de formas diferentes:',
+    interests: [
+      {
+        title: 'Triathlon',
+        text: 'Pratico musculação e corrida há mais de 5 anos, e há pouco mais de um ano decidi unir as modalidades e migrar para o triathlon. Hoje, dedico de 10 a 14 horas semanais aos treinos (natação, ciclismo, corrida e academia) — uma rotina de endurance que reforça diariamente minha disciplina, consistência e resiliência.',
+      },
+      {
+        title: 'Leitura',
+        text: 'Embora as histórias de ficção científica sejam minhas favoritas (pela criatividade e visões de futuro), minha estante é bem diversa e inclui livros de finanças, desenvolvimento pessoal, história e, claro, tecnologia.',
+      },
+    ],
+    closing: 'Acredito que a alta performance técnica nasce do equilíbrio entre um corpo em movimento e uma mente em constante aprendizado.',
+  },
 };

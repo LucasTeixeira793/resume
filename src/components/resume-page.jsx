@@ -14,7 +14,8 @@ import {
   Layers, BrainCircuit, MessageCircle, GitMerge, 
   GraduationCap, Book, X, ChevronRight, ExternalLink,
   ShieldCheck, Bot, Activity, Rocket, FolderCode,
-  Mail, Send, Loader2, Check
+  Mail, Send, Loader2, Check,
+  Waves, Bike, Footprints, Dumbbell, BookOpen
 } from 'lucide-react';
 
 // Ícones manuais para substituir os que foram removidos da biblioteca Lucide
@@ -79,6 +80,12 @@ const getProjectIcon = (projectName) => {
     'Semstress ABC': Layers
   };
   return icons[projectName] || FolderCode; 
+};
+
+const ABOUT_INTEREST_ICONS = {
+  Triathlon: [Waves, Bike, Footprints, Dumbbell],
+  Leitura: [BookOpen],
+  Reading: [BookOpen],
 };
 
 export function ResumePage({ lang }) {
@@ -512,6 +519,69 @@ export function ResumePage({ lang }) {
             </div>
           </div>
         </section>
+
+        {/* ALÉM DO CÓDIGO */}
+        {data.about && (
+          <section id="sobre" className="w-full bg-white py-20 md:py-28 scroll-mt-16">
+            <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+              <div className="flex items-center gap-6 mb-12">
+                <h2 className="text-xl font-medium text-slate-700 whitespace-nowrap">
+                  {data.about.title}
+                </h2>
+                <div className="h-[1px] bg-slate-200 flex-1"></div>
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="max-w-4xl mx-auto space-y-10"
+              >
+                <p className="text-slate-500 text-base md:text-lg leading-relaxed">
+                  {data.about.intro}
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {data.about.interests.map((interest, index) => {
+                    const icons = ABOUT_INTEREST_ICONS[interest.title] || [BookOpen];
+                    return (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                      >
+                        <Card className="border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 h-full">
+                          <CardContent className="p-8">
+                            <div className="flex items-center gap-3 mb-4">
+                              <div className="flex items-center gap-2 text-slate-400">
+                                {icons.map((Icon, i) => (
+                                  <Icon key={i} size={16} strokeWidth={1.75} />
+                                ))}
+                              </div>
+                              <h3 className="text-[1.05rem] font-bold text-slate-800">
+                                {interest.title}
+                              </h3>
+                            </div>
+                            <p className="text-slate-500 text-[0.9rem] leading-relaxed">
+                              {interest.text}
+                            </p>
+                          </CardContent>
+                        </Card>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+
+                <p className="text-slate-600 text-base md:text-lg leading-relaxed italic border-l-2 border-cyan-200 pl-6">
+                  {data.about.closing}
+                </p>
+              </motion.div>
+            </div>
+          </section>
+        )}
 
         {/* CONTATO */}
         <section id="contato" className="w-full bg-white py-20 md:py-28 scroll-mt-16">
